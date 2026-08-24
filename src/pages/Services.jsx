@@ -1,76 +1,132 @@
 import React from 'react';
-import { SERVICES_DATA } from '../data/productsData';
-import { Sparkles, CheckCircle2, ArrowRight, ShieldCheck, Phone } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { 
+  Sparkles, CheckCircle2, ShieldCheck, ArrowRight, Phone, Award, MessageCircle
+} from 'lucide-react';
+import { FITTING_CATEGORIES } from '../data/productsData';
+import SEO from '../components/SEO';
 
 export default function Services({ onOpenQuote }) {
+  const navigate = useNavigate();
+
+  const handleNavClick = (path) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate(path);
+  };
+
   return (
-    <div className="font-sans text-gray-900 bg-[#FAFAFA] min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <div className="font-sans text-[#111111] bg-[#FAFAFA] min-h-screen">
+      <SEO 
+        title="Turnkey Fitting Services & Installation Protocols"
+        description="Explore our complete interior fitting & installation services in Karachi. Master craftsmen executing SPC flooring, vinyl sheets, wall panels, roller blinds, and false ceilings."
+        keywords="turnkey fitting services karachi, spc flooring installation near me, vinyl sheet fitting, roller blinds installation karachi, false ceiling contractor"
+      />
+      
+      {/* ========================================================================= */}
+      {/* LUXURY HERO BANNER MATCHING REFERENCE IMAGE */}
+      {/* ========================================================================= */}
+      <section className="relative min-h-[55vh] flex items-center justify-center overflow-hidden py-24 px-4 sm:px-6 lg:px-8 bg-[#262628] text-white border-b border-[#C19A5B]/30">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="text-xs font-bold text-[#543A14] uppercase tracking-widest bg-[#FFF0DC] px-4 py-1.5 rounded-full border border-[#543A14]/15">
-            Turnkey Design & Execution
-          </span>
-          <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-[#131010]">
-            Architectural & Interior Services
-          </h1>
-          <p className="text-xs sm:text-base text-gray-600">
-            From 3D renderings to custom furniture crafting and site installation supervision across Pakistan.
-          </p>
+        {/* Background Unsplash Architectural Photograph */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2560" 
+            alt="Services Banner" 
+            className="w-full h-full object-cover brightness-90 contrast-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#262628]/95 via-[#262628]/85 to-[#262628]/60" />
         </div>
 
-        {/* Services List Grid */}
-        <div className="space-y-8">
-          {SERVICES_DATA.map((srv, idx) => (
-            <div 
-              key={srv.id}
-              id={srv.id}
-              className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+        <div className="relative z-10 max-w-5xl mx-auto text-center space-y-6">
+          <div className="inline-flex items-center space-x-2 bg-[#C19A5B]/20 backdrop-blur-md border border-[#C19A5B]/40 px-4 py-1.5 rounded-full shadow-lg">
+            <Sparkles className="w-4 h-4 text-[#C19A5B]" />
+            <span className="text-xs font-semibold text-[#C19A5B] uppercase tracking-wider">
+              Turnkey Execution Services
+            </span>
+          </div>
+
+          <h1 className="font-heading font-medium text-4xl sm:text-6xl lg:text-7xl text-white leading-tight">
+            Master Execution & <br />
+            <span className="italic font-normal text-[#FFF0DC]">Fitting Services</span>
+          </h1>
+
+          <p className="text-sm sm:text-lg text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
+            From initial laser site survey to final perimeter wall skirting handover, our master craftsmen deliver 100% waterproof, precision interior fitting across Karachi.
+          </p>
+
+          <div className="pt-2 flex flex-wrap justify-center gap-4">
+            <button 
+              onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); onOpenQuote(); }}
+              className="btn-gold px-8 py-3.5 rounded-xl text-xs sm:text-sm font-semibold flex items-center space-x-2 shadow-xl"
             >
-              <div className="lg:col-span-6 space-y-4">
-                <div className="inline-flex items-center space-x-2 bg-[#FFF0DC] px-3.5 py-1.5 rounded-full border border-[#543A14]/15 text-xs font-bold text-[#543A14]">
-                  <span>Phase 0{idx + 1}</span>
+              <Sparkles className="w-4 h-4 text-white" />
+              <span>Book Free Site Survey</span>
+            </button>
+
+            <a
+              href="https://wa.me/923102321899?text=Hi%20Interior%20Design%20Studio!%20I%20want%20to%20inquire%20about%20your%20fitting%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md px-7 py-3.5 rounded-xl text-xs sm:text-sm font-semibold border border-white/20 transition-all flex items-center space-x-2"
+            >
+              <MessageCircle className="w-4 h-4 text-[#25D366]" />
+              <span>WhatsApp Direct (0310 2321899)</span>
+            </a>
+          </div>
+        </div>
+
+      </section>
+
+      {/* Services List Content */}
+      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {FITTING_CATEGORIES.map((cat, index) => (
+            <div 
+              key={cat.id}
+              className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-all space-y-5"
+            >
+              <div className="flex items-center space-x-4 border-b border-gray-100 pb-4">
+                <div className="w-12 h-12 rounded-2xl bg-[#FFF0DC] text-[#C19A5B] flex items-center justify-center font-bold text-lg">
+                  0{index + 1}
                 </div>
-
-                <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#131010]">
-                  {srv.title}
-                </h2>
-                <p className="text-xs text-[#543A14] font-bold uppercase tracking-wider">{srv.subtitle}</p>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">{srv.description}</p>
-
-                <div className="space-y-2 pt-2">
-                  {srv.features.map((feat, fIdx) => (
-                    <div key={fIdx} className="flex items-center space-x-2 text-xs text-gray-700 font-medium">
-                      <CheckCircle2 className="w-4 h-4 text-[#543A14] shrink-0" />
-                      <span>{feat}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="pt-3">
-                  <button 
-                    onClick={onOpenQuote}
-                    className="btn-gold px-6 py-3 rounded-xl text-xs font-bold flex items-center space-x-2 shadow-md"
-                  >
-                    <span>Book Service Consultation</span>
-                    <ArrowRight className="w-4 h-4 text-[#F0BB78]" />
-                  </button>
+                <div>
+                  <h3 className="font-heading font-semibold text-2xl text-[#111111]">{cat.name}</h3>
+                  <p className="text-xs text-gray-500 font-medium">{cat.tagline}</p>
                 </div>
               </div>
 
-              <div className="lg:col-span-6 h-72 rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
-                <img 
-                  src={srv.image} 
-                  alt={srv.title} 
-                  className="w-full h-full object-cover"
-                />
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
+                {cat.description}
+              </p>
+
+              <div className="space-y-2 pt-2">
+                <span className="text-xs font-bold text-[#C19A5B] uppercase tracking-wider block">
+                  Available Solution Fitting:
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium text-gray-800">
+                  {cat.items.map((item) => (
+                    <div key={item.id} className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-4 h-4 text-[#C19A5B] shrink-0" />
+                      <span>{item.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-4">
+                <button
+                  onClick={() => handleNavClick(`/category/${cat.id}`)}
+                  className="btn-gold w-full py-3 rounded-xl text-xs font-semibold flex items-center justify-center space-x-2 shadow-md"
+                >
+                  <span>Explore {cat.name} Solutions</span>
+                  <ArrowRight className="w-4 h-4 text-white" />
+                </button>
               </div>
             </div>
           ))}
         </div>
-
       </div>
+
     </div>
   );
 }

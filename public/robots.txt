@@ -1,0 +1,6 @@
+# Robots.txt for Interior Design Studio Pakistan
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://interiordesignstudiopk.com/sitemap.xml

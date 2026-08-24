@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
   Phone, Mail, MapPin, ChevronDown, ChevronRight, Menu, X, 
-  Layers, Sparkles
+  Sparkles, ArrowRight, MessageCircle
 } from 'lucide-react';
 import { FITTING_CATEGORIES } from '../data/productsData';
 
 export default function Navbar({ onOpenQuote }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState(FITTING_CATEGORIES[0]?.id || 'flooring');
   const [activeMobileCat, setActiveMobileCat] = useState(null);
+  
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,32 +27,52 @@ export default function Navbar({ onOpenQuote }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when full screen mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
+
+  const handleNavClick = (path) => {
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate(path);
+  };
+
+  const selectedCategoryObj = FITTING_CATEGORIES.find(c => c.id === activeCategory) || FITTING_CATEGORIES[0];
 
   return (
     <header className="sticky top-0 z-50 w-full font-sans transition-all duration-300">
       
       {/* Top Contact Bar */}
-      <div className="bg-[#131010] text-[#FFF0DC] text-xs py-2 px-4 border-b border-[#543A14]/40">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-          <div className="flex items-center space-x-6 flex-wrap gap-y-1">
-            <a href="tel:+923120129016" className="flex items-center space-x-1.5 hover:text-[#F0BB78] transition-colors font-medium">
-              <Phone className="w-3.5 h-3.5 text-[#F0BB78]" />
-              <span>+92 312 0129016</span>
+      <div className="bg-[#262628] text-white text-xs sm:text-sm 2xl:text-base py-2.5 px-4 sm:px-6 border-b border-[#C19A5B]/40">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+          <div className="flex items-center space-x-6 flex-wrap gap-y-1 font-semibold">
+            <a href="tel:03102321899" className="flex items-center space-x-2 hover:text-[#C19A5B] transition-colors">
+              <Phone className="w-4 h-4 text-[#C19A5B]" />
+              <span>0310 2321899</span>
             </a>
-            <a href="mailto:info@interiordesignstudiopk.com" className="hidden sm:flex items-center space-x-1.5 hover:text-[#F0BB78] transition-colors">
-              <Mail className="w-3.5 h-3.5 text-[#F0BB78]" />
+            <a href="mailto:info@interiordesignstudiopk.com" className="hidden sm:flex items-center space-x-2 hover:text-[#C19A5B] transition-colors">
+              <Mail className="w-4 h-4 text-[#C19A5B]" />
               <span>info@interiordesignstudiopk.com</span>
             </a>
-            <div className="hidden md:flex items-center space-x-1.5 text-gray-300">
-              <MapPin className="w-3.5 h-3.5 text-[#F0BB78]" />
-              <span>Gulshan-e-Shamim, F.B Area, Karachi</span>
+            <div className="hidden md:flex items-center space-x-2 text-gray-300">
+              <MapPin className="w-4 h-4 text-[#C19A5B]" />
+              <span>Shop No 132, Shamim Sky Tower, Block 9 Yaseenabad, F.B Area, Karachi</span>
             </div>
           </div>
 
-          <div className="hidden lg:flex items-center space-x-2 text-[11px] text-[#F0BB78] font-medium">
+          <div className="hidden lg:flex items-center space-x-2 text-xs sm:text-sm font-bold text-[#C19A5B]">
             <span>interiordesignstudiopk.com</span>
           </div>
         </div>
@@ -58,196 +81,295 @@ export default function Navbar({ onOpenQuote }) {
       {/* Main Navigation Header */}
       <nav className={`transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#131010]/95 backdrop-blur-md shadow-2xl py-3 border-b border-[#F0BB78]/20' 
-          : 'bg-[#1C1817] py-4 border-b border-[#543A14]/40'
+          ? 'bg-white/98 backdrop-blur-md shadow-lg py-2.5 border-b border-gray-200' 
+          : 'bg-white py-3.5 border-b border-gray-200'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
-          {/* Brand Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#F0BB78] to-[#543A14] flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-              <Layers className="w-5 h-5 text-[#131010]" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-extrabold text-xl tracking-tight text-[#FFF0DC] group-hover:text-[#F0BB78] transition-colors leading-none">
-                INTERIOR DESIGN STUDIO
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#F0BB78] font-bold mt-1">
-                interiordesignstudiopk.com
-              </span>
-            </div>
-          </Link>
+          {/* Logo Image */}
+          <button 
+            onClick={() => handleNavClick('/')}
+            className="flex items-center text-left group focus:outline-none"
+          >
+            <img 
+              src="/full logo.png" 
+              alt="Interior Design Studio Pakistan" 
+              className="h-14 sm:h-16 w-auto object-contain transition-transform group-hover:scale-105"
+            />
+          </button>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center space-x-7">
-            <Link 
-              to="/" 
-              className={`text-sm font-semibold transition-colors hover:text-[#F0BB78] ${
-                location.pathname === '/' ? 'text-[#F0BB78]' : 'text-[#FFF0DC]'
+          <div className="hidden lg:flex items-center space-x-8">
+            <button 
+              onClick={() => handleNavClick('/')}
+              className={`text-base font-bold transition-colors hover:text-[#C19A5B] ${
+                location.pathname === '/' ? 'text-[#C19A5B]' : 'text-[#111111]'
               }`}
             >
               Home
-            </Link>
+            </button>
 
-            {/* MEGA DROPDOWN: PRODUCTS & SOLUTIONS */}
+            {/* MEGA DROPDOWN: SOLUTIONS */}
             <div className="relative group py-2">
-              <button className="flex items-center space-x-1 text-sm font-semibold text-[#FFF0DC] hover:text-[#F0BB78] transition-colors">
-                <span>Products & Solutions</span>
-                <ChevronDown className="w-4 h-4 text-[#F0BB78] group-hover:rotate-180 transition-transform duration-300" />
+              <button 
+                onClick={() => handleNavClick('/category/flooring')}
+                className="flex items-center space-x-1.5 text-base font-bold text-[#111111] hover:text-[#C19A5B] transition-colors"
+              >
+                <span>Solutions</span>
+                <ChevronDown className="w-4 h-4 text-[#C19A5B] group-hover:rotate-180 transition-transform duration-300" />
               </button>
 
-              <div className="nav-dropdown absolute left-1/2 -translate-x-1/2 top-full w-[1000px] max-w-[95vw] bg-[#1C1817] border border-[#F0BB78]/30 rounded-2xl shadow-2xl p-6 text-[#FFF0DC] grid grid-cols-4 gap-6 backdrop-blur-2xl">
-                {FITTING_CATEGORIES.map((cat) => (
-                  <div key={cat.id} className="space-y-3">
-                    <div className="border-b border-[#543A14] pb-2 flex items-center justify-between">
-                      <Link 
-                        to={`/category/${cat.id}`}
-                        className="font-heading text-xs font-bold text-[#F0BB78] hover:text-white uppercase tracking-wider"
+              <div className="nav-dropdown absolute left-1/2 -translate-x-1/2 top-full w-[1100px] max-w-[95vw] bg-white border border-gray-200 rounded-2xl shadow-2xl p-6 text-[#111111] backdrop-blur-2xl grid grid-cols-12 gap-6">
+                <div className="col-span-4 border-r border-gray-100 pr-4 space-y-1.5">
+                  <span className="text-xs uppercase font-bold text-gray-400 tracking-wider block mb-2 px-3">
+                    Categories
+                  </span>
+                  {FITTING_CATEGORIES.map((cat) => {
+                    const isActive = activeCategory === cat.id;
+                    return (
+                      <button
+                        key={cat.id}
+                        onMouseEnter={() => setActiveCategory(cat.id)}
+                        onClick={() => handleNavClick(`/category/${cat.id}`)}
+                        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all text-left whitespace-nowrap ${
+                          isActive 
+                            ? 'bg-[#C19A5B] text-white shadow-md' 
+                            : 'text-gray-800 hover:bg-gray-50 hover:text-[#C19A5B]'
+                        }`}
                       >
-                        {cat.name}
-                      </Link>
-                      <ChevronRight className="w-3.5 h-3.5 text-[#F0BB78]" />
-                    </div>
+                        <span className="whitespace-nowrap">{cat.name}</span>
+                        <ChevronRight className={`w-4 h-4 transition-transform ${isActive ? 'text-white translate-x-1' : 'text-gray-400'}`} />
+                      </button>
+                    );
+                  })}
+                </div>
 
-                    <div className="space-y-1 max-h-[300px] overflow-y-auto pr-1">
-                      {cat.items.map((item) => (
-                        <Link
-                          key={item.id}
-                          to={`/products/${item.id}`}
-                          className="block text-xs py-1.5 px-2 rounded-lg hover:bg-[#543A14]/50 hover:text-[#F0BB78] text-gray-300 transition-all font-medium"
-                        >
-                          • {item.name}
-                        </Link>
-                      ))}
+                <div className="col-span-8 pl-2 space-y-3">
+                  <div className="flex items-center justify-between border-b border-gray-100 pb-2">
+                    <div>
+                      <h4 className="font-heading font-extrabold text-sm sm:text-base text-[#C19A5B]">
+                        {selectedCategoryObj.name} Solutions
+                      </h4>
+                      <p className="text-xs text-gray-500 font-normal">
+                        {selectedCategoryObj.tagline}
+                      </p>
                     </div>
+                    <button 
+                      onClick={() => handleNavClick(`/category/${selectedCategoryObj.id}`)}
+                      className="text-xs text-[#C19A5B] font-bold hover:underline whitespace-nowrap"
+                    >
+                      View All ({selectedCategoryObj.items.length}) →
+                    </button>
                   </div>
-                ))}
+
+                  <div className="grid grid-cols-2 gap-2.5 max-h-[340px] overflow-y-auto pr-2 custom-scrollbar">
+                    {selectedCategoryObj.items.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => handleNavClick(`/products/${item.id}`)}
+                        className="flex items-center space-x-2 text-left text-xs sm:text-sm py-2 px-3 rounded-lg hover:bg-gray-50 text-gray-800 hover:text-[#C19A5B] font-semibold transition-all group/item whitespace-nowrap overflow-hidden"
+                      >
+                        <span className="text-[#C19A5B] font-bold text-sm leading-none">•</span>
+                        <span className="whitespace-nowrap truncate">{item.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
-            <Link 
-              to="/services" 
-              className={`text-sm font-semibold transition-colors hover:text-[#F0BB78] ${
-                location.pathname === '/services' ? 'text-[#F0BB78]' : 'text-[#FFF0DC]'
+            <button 
+              onClick={() => handleNavClick('/services')}
+              className={`text-base font-bold transition-colors hover:text-[#C19A5B] ${
+                location.pathname === '/services' ? 'text-[#C19A5B]' : 'text-[#111111]'
               }`}
             >
               Services
-            </Link>
+            </button>
 
-            <Link 
-              to="/projects" 
-              className={`text-sm font-semibold transition-colors hover:text-[#F0BB78] ${
-                location.pathname === '/projects' ? 'text-[#F0BB78]' : 'text-[#FFF0DC]'
+            <button 
+              onClick={() => handleNavClick('/projects')}
+              className={`text-base font-bold transition-colors hover:text-[#C19A5B] ${
+                location.pathname === '/projects' ? 'text-[#C19A5B]' : 'text-[#111111]'
               }`}
             >
               Projects
-            </Link>
+            </button>
 
-            <Link 
-              to="/about" 
-              className={`text-sm font-semibold transition-colors hover:text-[#F0BB78] ${
-                location.pathname === '/about' ? 'text-[#F0BB78]' : 'text-[#FFF0DC]'
+            <button 
+              onClick={() => handleNavClick('/about')}
+              className={`text-base font-bold transition-colors hover:text-[#C19A5B] ${
+                location.pathname === '/about' ? 'text-[#C19A5B]' : 'text-[#111111]'
               }`}
             >
               About Us
-            </Link>
+            </button>
 
-            <Link 
-              to="/contact" 
-              className={`text-sm font-semibold transition-colors hover:text-[#F0BB78] ${
-                location.pathname === '/contact' ? 'text-[#F0BB78]' : 'text-[#FFF0DC]'
+            <button 
+              onClick={() => handleNavClick('/contact')}
+              className={`text-base font-bold transition-colors hover:text-[#C19A5B] ${
+                location.pathname === '/contact' ? 'text-[#C19A5B]' : 'text-[#111111]'
               }`}
             >
               Contact
-            </Link>
+            </button>
           </div>
 
-          {/* Single Gold CTA Button */}
+          {/* Desktop CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
             <button 
-              onClick={onOpenQuote}
-              className="btn-gold px-5 py-2.5 rounded-xl text-xs font-extrabold flex items-center space-x-2 shadow-lg"
+              onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); onOpenQuote(); }}
+              className="btn-gold px-6 py-3 rounded-xl text-xs sm:text-sm font-extrabold flex items-center space-x-2 shadow-md"
             >
-              <Sparkles className="w-4 h-4 text-[#131010]" />
+              <Sparkles className="w-4 h-4 text-white" />
               <span>Book Free Site Survey</span>
             </button>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <div className="lg:hidden flex items-center space-x-3">
+          {/* Mobile Hamburger Trigger Button */}
+          <div className="lg:hidden flex items-center">
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-[#543A14]/60 text-[#F0BB78] border border-[#F0BB78]/30"
-              aria-label="Toggle Navigation Menu"
+              onClick={() => setMobileMenuOpen(true)}
+              className="p-3 rounded-2xl bg-[#262628] text-white border border-[#C19A5B]/30 shadow-md active:scale-95 transition-transform"
+              aria-label="Open Fullscreen Navigation"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <Menu className="w-7 h-7 text-[#C19A5B]" />
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Drawer Menu */}
+      {/* ========================================================================= */}
+      {/* BOLD FULL SCREEN MOBILE HAMBURGER NAVIGATION OVERLAY */}
+      {/* ========================================================================= */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[100px] bg-[#131010]/98 z-40 overflow-y-auto p-6 text-[#FFF0DC] border-t border-[#F0BB78]/20 animate-fade-in shadow-2xl">
-          <div className="space-y-4">
-            <Link to="/" className="block py-2 text-base font-bold text-[#F0BB78] border-b border-[#543A14]">
-              Home
-            </Link>
+        <div className="fixed inset-0 z-[100] bg-[#262628] text-white flex flex-col justify-between p-6 overflow-y-auto animate-fade-in font-sans">
+          
+          {/* Header Bar: Logo & Close Button */}
+          <div className="flex justify-between items-center border-b border-gray-800 pb-5">
+            <button onClick={() => handleNavClick('/')} className="focus:outline-none">
+              <img 
+                src="/full logo.png" 
+                alt="Interior Design Studio Pakistan" 
+                className="h-14 invert w-auto object-contain"
+              />
+            </button>
 
-            <div className="border-b border-[#543A14] pb-3">
-              <div className="flex justify-between items-center py-2 font-bold text-[#FFF0DC]">
-                <span>Products & Solutions</span>
-                <span className="text-xs text-[#F0BB78]">Tap to expand</span>
-              </div>
-              <div className="space-y-2.5 mt-2">
-                {FITTING_CATEGORIES.map((cat) => (
-                  <div key={cat.id} className="bg-[#1C1817] p-3 rounded-xl border border-[#F0BB78]/20">
-                    <button 
-                      onClick={() => setActiveMobileCat(activeMobileCat === cat.id ? null : cat.id)}
-                      className="w-full flex items-center justify-between text-xs font-bold text-[#F0BB78]"
-                    >
-                      <span>{cat.name} ({cat.items.length})</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform ${activeMobileCat === cat.id ? 'rotate-180' : ''}`} />
-                    </button>
-                    
-                    {activeMobileCat === cat.id && (
-                      <div className="mt-2 space-y-1.5 pt-2 border-t border-[#543A14]/50">
-                        {cat.items.map((item) => (
-                          <Link
-                            key={item.id}
-                            to={`/products/${item.id}`}
-                            className="block text-xs py-1.5 px-2 text-gray-300 font-medium hover:text-[#F0BB78] rounded hover:bg-[#543A14]/30"
-                          >
-                            • {item.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <Link to="/services" className="block py-2 text-sm font-medium text-[#FFF0DC] border-b border-[#543A14]">
-              Services
-            </Link>
-            <Link to="/projects" className="block py-2 text-sm font-medium text-[#FFF0DC] border-b border-[#543A14]">
-              Executed Projects
-            </Link>
-            <Link to="/about" className="block py-2 text-sm font-medium text-[#FFF0DC] border-b border-[#543A14]">
-              About Us
-            </Link>
-            <Link to="/contact" className="block py-2 text-sm font-medium text-[#FFF0DC] border-b border-[#543A14]">
-              Contact & Showroom
-            </Link>
-
-            <button 
-              onClick={() => { setMobileMenuOpen(false); onOpenQuote(); }}
-              className="w-full btn-gold py-3.5 rounded-xl text-center font-extrabold text-sm shadow-lg mt-4"
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-12 h-12 rounded-full bg-[#C19A5B] text-white flex items-center justify-center shadow-2xl active:scale-90 transition-transform"
+              aria-label="Close Mobile Menu"
             >
-              Book Free Site Visit & Quote
+              <X className="w-7 h-7 stroke-[3]" />
             </button>
           </div>
+
+          {/* Navigation Links Stack (Bold & Prominent) */}
+          <div className="py-8 space-y-6 my-auto">
+            
+            <button 
+              onClick={() => handleNavClick('/')}
+              className="block w-full text-left font-heading text-3xl font-semibold text-white hover:text-[#C19A5B] transition-colors"
+            >
+              Home
+            </button>
+
+            {/* SOLUTIONS ACCORDION IN FULL SCREEN MENU */}
+            <div className="border-t border-b border-gray-800/80 py-4 space-y-3">
+              <button 
+                onClick={() => setActiveMobileCat(activeMobileCat === 'all' ? null : 'all')}
+                className="w-full flex justify-between items-center text-left font-heading text-3xl font-semibold text-[#C19A5B]"
+              >
+                <span>Solutions</span>
+                <ChevronDown className={`w-7 h-7 text-[#C19A5B] transition-transform duration-300 ${activeMobileCat === 'all' ? 'rotate-180' : ''}`} />
+              </button>
+
+              {activeMobileCat === 'all' && (
+                <div className="space-y-4 pt-3 pl-2 border-l-2 border-[#C19A5B]/40 animate-fade-in">
+                  {FITTING_CATEGORIES.map((cat) => (
+                    <div key={cat.id} className="space-y-2">
+                      <button
+                        onClick={() => handleNavClick(`/category/${cat.id}`)}
+                        className="block text-lg font-bold text-white hover:text-[#C19A5B] flex items-center space-x-2"
+                      >
+                        <span className="text-[#C19A5B]">•</span>
+                        <span>{cat.name} ({cat.items.length})</span>
+                      </button>
+                      <div className="grid grid-cols-1 gap-1.5 pl-4">
+                        {cat.items.map((item) => (
+                          <button
+                            key={item.id}
+                            onClick={() => handleNavClick(`/products/${item.id}`)}
+                            className="text-xs text-gray-300 hover:text-white font-medium text-left truncate"
+                          >
+                            – {item.name}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <button 
+              onClick={() => handleNavClick('/services')}
+              className="block w-full text-left font-heading text-3xl font-semibold text-white hover:text-[#C19A5B] transition-colors"
+            >
+              Services
+            </button>
+
+            <button 
+              onClick={() => handleNavClick('/projects')}
+              className="block w-full text-left font-heading text-3xl font-semibold text-white hover:text-[#C19A5B] transition-colors"
+            >
+              Executed Projects
+            </button>
+
+            <button 
+              onClick={() => handleNavClick('/about')}
+              className="block w-full text-left font-heading text-3xl font-semibold text-white hover:text-[#C19A5B] transition-colors"
+            >
+              About Us
+            </button>
+
+            <button 
+              onClick={() => handleNavClick('/contact')}
+              className="block w-full text-left font-heading text-3xl font-semibold text-white hover:text-[#C19A5B] transition-colors"
+            >
+              Contact & Showroom
+            </button>
+
+          </div>
+
+          {/* Bottom Action Footer inside Mobile Overlay */}
+          <div className="pt-6 border-t border-gray-800 space-y-3">
+            <div className="flex items-center space-x-3 text-xs text-gray-300">
+              <MapPin className="w-4 h-4 text-[#C19A5B] shrink-0" />
+              <span>Shop No 132, Shamim Sky Tower, Block 9 Yaseenabad, Karachi</span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <button 
+                onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); onOpenQuote(); }}
+                className="btn-gold py-4 rounded-xl text-center font-bold text-sm shadow-xl flex items-center justify-center space-x-2"
+              >
+                <Sparkles className="w-4 h-4 text-white" />
+                <span>Book Free Site Survey</span>
+              </button>
+
+              <a
+                href="https://wa.me/923102321899?text=Hi%20Interior%20Design%20Studio!%20I%20want%20to%20inquire%20about%20site%20fitting."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#25D366] text-white py-4 rounded-xl text-center font-bold text-sm shadow-lg flex items-center justify-center space-x-2"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp (0310 2321899)</span>
+              </a>
+            </div>
+          </div>
+
         </div>
       )}
     </header>

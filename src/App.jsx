@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import QuoteModal from './components/QuoteModal';
-import FloatingContact from './components/FloatingContact';
-
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import CategoryPage from './pages/CategoryPage';
@@ -12,54 +9,65 @@ import Services from './pages/Services';
 import Projects from './pages/Projects';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import VisualizerPage from './pages/VisualizerPage';
-import CalculatorPage from './pages/CalculatorPage';
-
-function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
+import QuoteModal from './components/QuoteModal';
+import FloatingContact from './components/FloatingContact';
+import { ChevronUp } from 'lucide-react';
 
 export default function App() {
-  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 350) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="min-h-screen bg-[#131010] text-[#FFF0DC] font-sans selection:bg-[#F0BB78] selection:text-[#131010] flex flex-col">
-        
-        {/* Navigation Bar */}
-        <Navbar onOpenQuote={() => setQuoteModalOpen(true)} />
+    <div className="min-h-screen bg-[#FAFAFA] flex flex-col font-sans selection:bg-[#C19A5B] selection:text-white">
+      <Navbar onOpenQuote={() => setIsQuoteOpen(true)} />
 
-        {/* Page Content Routes */}
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home onOpenQuote={() => setQuoteModalOpen(true)} />} />
-            <Route path="/products/:productId" element={<ProductDetail onOpenQuote={() => setQuoteModalOpen(true)} />} />
-            <Route path="/category/:categoryId" element={<CategoryPage onOpenQuote={() => setQuoteModalOpen(true)} />} />
-            <Route path="/services" element={<Services onOpenQuote={() => setQuoteModalOpen(true)} />} />
-            <Route path="/projects" element={<Projects onOpenQuote={() => setQuoteModalOpen(true)} />} />
-            <Route path="/about" element={<About onOpenQuote={() => setQuoteModalOpen(true)} />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/visualizer" element={<VisualizerPage onOpenQuote={() => setQuoteModalOpen(true)} />} />
-            <Route path="/calculator" element={<CalculatorPage onOpenQuote={() => setQuoteModalOpen(true)} />} />
-          </Routes>
-        </main>
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home onOpenQuote={() => setIsQuoteOpen(true)} />} />
+          <Route path="/products/:productId" element={<ProductDetail onOpenQuote={() => setIsQuoteOpen(true)} />} />
+          <Route path="/category/:categoryId" element={<CategoryPage onOpenQuote={() => setIsQuoteOpen(true)} />} />
+          <Route path="/services" element={<Services onOpenQuote={() => setIsQuoteOpen(true)} />} />
+          <Route path="/projects" element={<Projects onOpenQuote={() => setIsQuoteOpen(true)} />} />
+          <Route path="/about" element={<About onOpenQuote={() => setIsQuoteOpen(true)} />} />
+          <Route path="/contact" element={<Contact onOpenQuote={() => setIsQuoteOpen(true)} />} />
+        </Routes>
+      </main>
 
-        {/* Footer */}
-        <Footer onOpenQuote={() => setQuoteModalOpen(true)} />
+      <Footer onOpenQuote={() => setIsQuoteOpen(true)} />
 
-        {/* Global Quote Request Modal */}
-        <QuoteModal isOpen={quoteModalOpen} onClose={() => setQuoteModalOpen(false)} />
+      {/* Floating WhatsApp Direct Contact (Bottom Left) */}
+      <FloatingContact />
 
-        {/* Direct WhatsApp & Phone Floating Actions */}
-        <FloatingContact />
-      </div>
-    </Router>
+      {/* Floating Scroll To Top Button (Bottom Right) */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-[#262628] text-[#C19A5B] border border-[#C19A5B]/40 shadow-2xl hover:bg-[#C19A5B] hover:text-white transition-all duration-300 transform hover:scale-110 active:scale-95"
+          aria-label="Scroll to top"
+        >
+          <ChevronUp className="w-5 h-5 stroke-[2.5]" />
+        </button>
+      )}
+
+      {/* Site Survey Inquiry Modal */}
+      <QuoteModal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
+    </div>
   );
 }

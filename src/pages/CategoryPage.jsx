@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ChevronRight, ArrowLeft, Sparkles, Phone } from 'lucide-react';
 import { FITTING_CATEGORIES, SOLUTIONS_DATA } from '../data/productsData';
+import SEO from '../components/SEO';
 
 export default function CategoryPage({ onOpenQuote }) {
   const { categoryId } = useParams();
@@ -10,21 +11,26 @@ export default function CategoryPage({ onOpenQuote }) {
 
   return (
     <div className="font-sans text-gray-900 bg-[#FAFAFA] min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+      <SEO 
+        title={`${category.name} Solutions & Turnkey Fitting`}
+        description={`Explore premium ${category.name} solutions in Karachi. Turnkey material supply + expert site fitting service for residential and commercial properties.`}
+        keywords={`${category.name} karachi, ${category.name} fitting near me, turnkey ${category.name}`}
+      />
       <div className="max-w-7xl mx-auto space-y-10">
         
         {/* Breadcrumbs */}
         <div className="flex items-center space-x-2 text-xs text-gray-500 font-medium">
-          <Link to="/" className="hover:text-[#543A14]">Home</Link>
-          <ChevronRight className="w-3.5 h-3.5 text-[#543A14]" />
-          <span className="text-[#543A14] font-bold">{category.name}</span>
+          <Link to="/" className="hover:text-[#C19A5B]">Home</Link>
+          <ChevronRight className="w-3.5 h-3.5 text-[#C19A5B]" />
+          <span className="text-[#C19A5B] font-bold">{category.name}</span>
         </div>
 
         {/* Category Header */}
         <div className="bg-white p-8 sm:p-12 rounded-3xl border border-gray-200 shadow-sm space-y-4">
-          <span className="text-xs font-bold text-[#543A14] uppercase tracking-widest bg-[#FFF0DC] px-3.5 py-1.5 rounded-full border border-[#543A14]/15">
+          <span className="text-xs font-bold text-[#C19A5B] uppercase tracking-widest bg-[#FFF0DC] px-3.5 py-1.5 rounded-full border border-[#C19A5B]/20">
             Turnkey Installation Category
           </span>
-          <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-[#131010]">
+          <h1 className="font-heading text-3xl sm:text-5xl font-semibold text-[#111111]">
             {category.name}
           </h1>
           <p className="text-sm sm:text-base text-gray-600 max-w-3xl leading-relaxed">
@@ -39,7 +45,7 @@ export default function CategoryPage({ onOpenQuote }) {
             return (
               <div 
                 key={item.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group border border-gray-200"
               >
                 <div>
                   <div className="relative h-60 overflow-hidden bg-gray-100">
@@ -49,17 +55,17 @@ export default function CategoryPage({ onOpenQuote }) {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     {item.badge && (
-                      <span className="absolute top-4 right-4 text-[10px] font-extrabold bg-[#F0BB78] text-[#131010] px-3 py-1 rounded-full shadow-sm">
+                      <span className="absolute top-4 right-4 text-[10px] font-bold bg-[#C19A5B] text-white px-3 py-1 rounded-full shadow-sm">
                         {item.badge}
                       </span>
                     )}
                   </div>
 
                   <div className="p-6 space-y-3">
-                    <h3 className="font-heading font-extrabold text-xl text-[#131010] group-hover:text-[#543A14] transition-colors">
+                    <h3 className="font-heading font-semibold text-xl text-[#111111] group-hover:text-[#C19A5B] transition-colors">
                       {item.name}
                     </h3>
-                    <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed font-normal">
                       {detail.subtitle || detail.description}
                     </p>
                   </div>
@@ -68,10 +74,10 @@ export default function CategoryPage({ onOpenQuote }) {
                 <div className="p-6 pt-0">
                   <Link 
                     to={`/products/${item.id}`}
-                    className="w-full btn-gold py-3 rounded-xl text-xs font-bold flex items-center justify-center space-x-1.5"
+                    className="w-full btn-gold py-3 rounded-xl text-xs font-semibold flex items-center justify-center space-x-1.5 shadow-md"
                   >
                     <span>View Execution Details</span>
-                    <ChevronRight className="w-4 h-4 text-[#F0BB78]" />
+                    <ChevronRight className="w-4 h-4 text-white" />
                   </Link>
                 </div>
               </div>

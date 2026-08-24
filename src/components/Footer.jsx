@@ -1,143 +1,142 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { 
-  Layers, Phone, Mail, MapPin, Clock, ArrowRight, ShieldCheck, Award, Truck
+  Phone, Mail, MapPin, ArrowRight, MessageCircle, Globe, Share2
 } from 'lucide-react';
-import { FITTING_CATEGORIES } from '../data/productsData';
 
 export default function Footer({ onOpenQuote }) {
+  const navigate = useNavigate();
+
+  const handleNavClick = (path) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate(path);
+  };
+
   return (
-    <footer className="bg-[#131010] text-[#FFF0DC] border-t border-[#543A14]/40 font-sans pt-16 pb-8 relative overflow-hidden">
+    <footer className="bg-[#262628] text-white font-sans pt-20 pb-12 border-t border-[#C19A5B]/30 relative overflow-hidden">
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Background Subtle Glow */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C19A5B]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#C19A5B]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         
-        {/* Trust Badges Banner */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-12 mb-12 border-b border-[#543A14]/60">
-          <div className="flex items-center space-x-4 bg-[#1C1817] p-5 rounded-2xl border border-[#F0BB78]/20">
-            <div className="w-12 h-12 rounded-xl bg-[#543A14] flex items-center justify-center text-[#F0BB78] shrink-0">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="font-heading font-bold text-sm text-[#F0BB78]">100% Water & Termite Guarantee</h4>
-              <p className="text-xs text-gray-300 mt-0.5 font-medium">Heavy-duty SPC & Vinyl engineered for Pakistani climate.</p>
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-4 bg-[#1C1817] p-5 rounded-2xl border border-[#F0BB78]/20">
-            <div className="w-12 h-12 rounded-xl bg-[#543A14] flex items-center justify-center text-[#F0BB78] shrink-0">
-              <Award className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="font-heading font-bold text-sm text-[#F0BB78]">15+ Years Master Craftsmen</h4>
-              <p className="text-xs text-gray-300 mt-0.5 font-medium">Professional site measurement and clean fitting teams.</p>
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-4 bg-[#1C1817] p-5 rounded-2xl border border-[#F0BB78]/20">
-            <div className="w-12 h-12 rounded-xl bg-[#543A14] flex items-center justify-center text-[#F0BB78] shrink-0">
-              <Truck className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="font-heading font-bold text-sm text-[#F0BB78]">Nationwide Delivery & Fitting</h4>
-              <p className="text-xs text-gray-300 mt-0.5 font-medium">Karachi, Lahore, Islamabad, Rawalpindi & nationwide.</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Footer Main Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        {/* Footer Main Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 items-start">
           
-          {/* Col 1: Studio Brand & About */}
-          <div className="lg:col-span-2 space-y-4">
-            <Link to="/" className="flex items-center space-x-3 group inline-block">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#F0BB78] to-[#543A14] flex items-center justify-center shadow-md">
-                <Layers className="w-6 h-6 text-[#131010]" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-extrabold text-xl tracking-tight text-[#FFF0DC]">
-                  INTERIOR DESIGN STUDIO
-                </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-[#F0BB78] font-bold">
-                  interiordesignstudiopk.com
-                </span>
-              </div>
-            </Link>
-            <p className="text-xs text-gray-300 leading-relaxed pr-4 font-normal">
-              Pakistan's premier luxury interior design and flooring specialist contractor. We supply materials and execute complete on-site fitting for houses, offices, shops, gyms, and medical centers across Pakistan.
+          {/* Col 1: Studio Identity & Direct Contact Details */}
+          <div className="lg:col-span-2 space-y-6">
+            <button 
+              onClick={() => handleNavClick('/')}
+              className="flex items-center text-left group focus:outline-none"
+            >
+              <img 
+                src="/full logo.png" 
+                alt="Interior Design Studio Pakistan" 
+                className="h-16 invert sm:h-20 lg:h-28 w-auto object-contain transition-transform group-hover:scale-105"
+              />
+            </button>
+
+            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal max-w-sm">
+              Award-winning interior design studio transforming spaces into extraordinary experiences. Residential, commercial, and hospitality design in Karachi, Pakistan.
             </p>
-            <div className="pt-2">
-              <button 
-                onClick={onOpenQuote}
-                className="btn-gold px-5 py-2.5 rounded-xl text-xs font-bold flex items-center space-x-2 shadow-md"
+
+            {/* Direct Contact Stack */}
+            <div className="space-y-3 text-xs sm:text-sm text-gray-300 font-medium">
+              <div className="flex items-center space-x-3">
+                <Phone className="w-4 h-4 text-[#C19A5B] shrink-0" />
+                <a href="tel:03102321899" className="hover:text-[#C19A5B] font-bold">0310 2321899</a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="w-4 h-4 text-[#C19A5B] shrink-0" />
+                <a href="mailto:info@interiordesignstudiopk.com" className="hover:text-[#C19A5B]">info@interiordesignstudiopk.com</a>
+              </div>
+              <div className="flex items-start space-x-3">
+                <MapPin className="w-4 h-4 text-[#C19A5B] shrink-0 mt-0.5" />
+                <span>Shop No 132, Shamim Sky Tower, Federal B Area Block 9 Yaseenabad, Karachi.</span>
+              </div>
+            </div>
+
+            {/* Social Icons Stack */}
+            <div className="flex items-center space-x-3 pt-2">
+              <a
+                href="https://wa.me/923102321899"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#25D366] transition-all"
+                aria-label="WhatsApp"
               >
-                <span>Request Free Sample Book</span>
-                <ArrowRight className="w-4 h-4 text-[#131010]" />
-              </button>
+                <MessageCircle className="w-4 h-4" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#C19A5B] transition-all"
+                aria-label="Social Share"
+              >
+                <Share2 className="w-4 h-4" />
+              </a>
+              <a
+                href="https://interiordesignstudiopk.com"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#C19A5B] transition-all"
+                aria-label="Website"
+              >
+                <Globe className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
-          {/* Col 2: Top Fitting Solutions */}
-          <div className="space-y-3">
-            <h4 className="font-heading text-xs font-bold text-[#F0BB78] uppercase tracking-wider border-b border-[#543A14] pb-2">
-              Flooring Fitting
+          {/* Col 2: SERVICES */}
+          <div className="space-y-4">
+            <h4 className="font-sans-heading text-xs font-bold text-[#C19A5B] uppercase tracking-widest border-b border-gray-700 pb-2">
+              Services
             </h4>
-            <ul className="space-y-2 text-xs text-gray-300 font-medium">
-              <li><Link to="/products/spc-flooring-fitting" className="hover:text-[#F0BB78] transition-colors">• SPC Waterproof Plank Fitting</Link></li>
-              <li><Link to="/products/pvc-vinyl-fitting" className="hover:text-[#F0BB78] transition-colors">• PVC Vinyl Planks & Sheets</Link></li>
-              <li><Link to="/products/wooden-flooring-fitting" className="hover:text-[#F0BB78] transition-colors">• Hardwood & Parquet Fitting</Link></li>
-              <li><Link to="/products/gym-rubber-fitting" className="hover:text-[#F0BB78] transition-colors">• Gym Rubber Tile Fitting</Link></li>
-              <li><Link to="/products/carpet-tile-fitting" className="hover:text-[#F0BB78] transition-colors">• Commercial Carpet Tiles</Link></li>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-gray-300 font-medium">
+              <li><button onClick={() => handleNavClick('/products/spc-flooring')} className="hover:text-[#C19A5B] transition-colors text-left">Residential Flooring</button></li>
+              <li><button onClick={() => handleNavClick('/products/carpet-tiles')} className="hover:text-[#C19A5B] transition-colors text-left">Commercial Fit-outs</button></li>
+              <li><button onClick={() => handleNavClick('/products/fluted-panels')} className="hover:text-[#C19A5B] transition-colors text-left">Wall Cladding & Slats</button></li>
+              <li><button onClick={() => handleNavClick('/products/roller-blinds')} className="hover:text-[#C19A5B] transition-colors text-left">Motorized Blinds</button></li>
+              <li><button onClick={() => handleNavClick('/products/false-ceiling')} className="hover:text-[#C19A5B] transition-colors text-left">Gypsum False Ceiling</button></li>
             </ul>
           </div>
 
-          {/* Col 3: Blinds & Wall Covering */}
-          <div className="space-y-3">
-            <h4 className="font-heading text-xs font-bold text-[#F0BB78] uppercase tracking-wider border-b border-[#543A14] pb-2">
-              Wall & Window Fitting
+          {/* Col 3: RESOURCES */}
+          <div className="space-y-4">
+            <h4 className="font-sans-heading text-xs font-bold text-[#C19A5B] uppercase tracking-widest border-b border-gray-700 pb-2">
+              Resources
             </h4>
-            <ul className="space-y-2 text-xs text-gray-300 font-medium">
-              <li><Link to="/products/wpc-fluted-wall-fitting" className="hover:text-[#F0BB78] transition-colors">• WPC Fluted Slat Media Wall</Link></li>
-              <li><Link to="/products/shop-pvc-wall-fitting" className="hover:text-[#F0BB78] transition-colors">• Damp-Proof PVC Wall Panels</Link></li>
-              <li><Link to="/products/korean-wallpaper-fitting" className="hover:text-[#F0BB78] transition-colors">• Korean 3D Wallpaper Fitting</Link></li>
-              <li><Link to="/products/window-blinds-fitting" className="hover:text-[#F0BB78] transition-colors">• Motorized Window Blinds</Link></li>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-gray-300 font-medium">
+              <li><button onClick={() => handleNavClick('/projects')} className="hover:text-[#C19A5B] transition-colors text-left">Portfolio</button></li>
+              <li><button onClick={() => handleNavClick('/category/flooring')} className="hover:text-[#C19A5B] transition-colors text-left">Material Catalog</button></li>
+              <li><button onClick={() => handleNavClick('/about')} className="hover:text-[#C19A5B] transition-colors text-left">Execution Protocol</button></li>
+              <li><button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); onOpenQuote(); }} className="hover:text-[#C19A5B] transition-colors text-left">Free Site Survey</button></li>
             </ul>
           </div>
 
-          {/* Col 4: Contact & Showroom */}
-          <div className="space-y-3">
-            <h4 className="font-heading text-xs font-bold text-[#F0BB78] uppercase tracking-wider border-b border-[#543A14] pb-2">
-              Showroom & Contact
+          {/* Col 4: COMPANY */}
+          <div className="space-y-4">
+            <h4 className="font-sans-heading text-xs font-bold text-[#C19A5B] uppercase tracking-widest border-b border-gray-700 pb-2">
+              Company
             </h4>
-            <ul className="space-y-2.5 text-xs text-gray-300 font-medium">
-              <li className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 text-[#F0BB78] shrink-0 mt-0.5" />
-                <span>Shop #13, Shamim Sky Tower, Gulshan-e-Shamim, Federal B Area, Karachi.</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-[#F0BB78] shrink-0" />
-                <a href="tel:+923120129016" className="hover:text-[#F0BB78] font-bold">+92 312 0129016</a>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-[#F0BB78] shrink-0" />
-                <a href="mailto:info@interiordesignstudiopk.com" className="hover:text-[#F0BB78]">info@interiordesignstudiopk.com</a>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Clock className="w-4 h-4 text-[#F0BB78] shrink-0" />
-                <span>Mon - Sat: 11:00 AM - 9:00 PM</span>
-              </li>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-gray-300 font-medium">
+              <li><button onClick={() => handleNavClick('/about')} className="hover:text-[#C19A5B] transition-colors text-left">About Studio</button></li>
+              <li><button onClick={() => handleNavClick('/contact')} className="hover:text-[#C19A5B] transition-colors text-left">Contact & Showroom</button></li>
+              <li><button onClick={() => handleNavClick('/projects')} className="hover:text-[#C19A5B] transition-colors text-left">Executed Work</button></li>
             </ul>
           </div>
+
         </div>
 
-        {/* Bottom copyright line */}
-        <div className="pt-6 border-t border-[#543A14]/60 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-4 font-medium">
+        {/* Bottom Copyright */}
+        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-4 font-normal">
           <p>© {new Date().getFullYear()} Interior Design Studio (interiordesignstudiopk.com). All Rights Reserved.</p>
           <div className="flex space-x-6">
-            <Link to="/about" className="hover:text-[#F0BB78]">Company Profile</Link>
-            <Link to="/contact" className="hover:text-[#F0BB78]">Site Survey Booking</Link>
-            <Link to="/projects" className="hover:text-[#F0BB78]">Executed Projects</Link>
+            <button onClick={() => handleNavClick('/about')} className="hover:text-[#C19A5B] transition-colors">Privacy Policy</button>
+            <button onClick={() => handleNavClick('/contact')} className="hover:text-[#C19A5B] transition-colors">Site Measurement Terms</button>
           </div>
         </div>
+
       </div>
     </footer>
   );

@@ -55,7 +55,7 @@ export default function QuoteModal({ isOpen, onClose }) {
               <input
                 type="text"
                 required
-                placeholder="Tariq Mansoor"
+                placeholder="Full Name"
                 className="w-full bg-gray-50 border border-gray-300 focus:border-[#C19A5B] focus:bg-white rounded-xl p-3 text-xs text-gray-900 outline-none font-semibold"
               />
             </div>
@@ -65,7 +65,7 @@ export default function QuoteModal({ isOpen, onClose }) {
               <input
                 type="tel"
                 required
-                placeholder="0310 2321899"
+                placeholder="Phone Number / WhatsApp"
                 className="w-full bg-gray-50 border border-gray-300 focus:border-[#C19A5B] focus:bg-white rounded-xl p-3 text-xs text-gray-900 outline-none font-semibold"
               />
             </div>
@@ -75,7 +75,7 @@ export default function QuoteModal({ isOpen, onClose }) {
               <input
                 type="text"
                 required
-                placeholder="e.g. DHA Phase 8, Clifton, Gulshan, F.B Area..."
+                placeholder="Enter your site area or location"
                 className="w-full bg-gray-50 border border-gray-300 focus:border-[#C19A5B] focus:bg-white rounded-xl p-3 text-xs text-gray-900 outline-none font-semibold"
               />
             </div>

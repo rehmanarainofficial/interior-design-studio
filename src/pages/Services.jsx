@@ -18,8 +18,8 @@ export default function Services({ onOpenQuote }) {
     <div className="font-sans text-[#111111] bg-[#FAFAFA] min-h-screen">
       <SEO 
         title="Turnkey Fitting Services & Installation Protocols"
-        description="Explore our complete interior fitting & installation services in Karachi. Master craftsmen executing SPC flooring, vinyl sheets, wall panels, roller blinds, and false ceilings."
-        keywords="turnkey fitting services karachi, spc flooring installation near me, vinyl sheet fitting, roller blinds installation karachi, false ceiling contractor"
+        description="Explore our complete interior fitting & installation services in Karachi. Master craftsmen executing SPC flooring, vinyl sheets, wall panels, roller blinds, furniture, and false ceilings."
+        keywords="turnkey fitting services karachi, spc flooring installation near me, vinyl sheet fitting, roller blinds installation karachi, commercial furniture karachi"
       />
       
       {/* ========================================================================= */}
@@ -27,7 +27,6 @@ export default function Services({ onOpenQuote }) {
       {/* ========================================================================= */}
       <section className="relative min-h-[55vh] flex items-center justify-center overflow-hidden py-24 px-4 sm:px-6 lg:px-8 bg-[#262628] text-white border-b border-[#C19A5B]/30">
         
-        {/* Background Unsplash Architectural Photograph */}
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2560" 
@@ -80,50 +79,64 @@ export default function Services({ onOpenQuote }) {
       {/* Services List Content */}
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {FITTING_CATEGORIES.map((cat, index) => (
-            <div 
-              key={cat.id}
-              className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-all space-y-5"
-            >
-              <div className="flex items-center space-x-4 border-b border-gray-100 pb-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#FFF0DC] text-[#C19A5B] flex items-center justify-center font-bold text-lg">
+          {FITTING_CATEGORIES.map((cat, index) => {
+            const isSingleCat = cat.isSingle;
+            return (
+              <div 
+                key={cat.id}
+                className="relative bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-all space-y-5 overflow-hidden group"
+              >
+                {/* HUGE WATERMARK BACKGROUND NUMBER (PLACEHOLDER STYLE) */}
+                <span className="font-heading font-extrabold text-7xl sm:text-8xl text-gray-100 group-hover:text-[#FFF0DC] transition-colors absolute top-4 right-6 pointer-events-none select-none z-0">
                   0{index + 1}
-                </div>
-                <div>
-                  <h3 className="font-heading font-semibold text-2xl text-[#111111]">{cat.name}</h3>
-                  <p className="text-xs text-gray-500 font-medium">{cat.tagline}</p>
-                </div>
-              </div>
-
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
-                {cat.description}
-              </p>
-
-              <div className="space-y-2 pt-2">
-                <span className="text-xs font-bold text-[#C19A5B] uppercase tracking-wider block">
-                  Available Solution Fitting:
                 </span>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium text-gray-800">
-                  {cat.items.map((item) => (
-                    <div key={item.id} className="flex items-center space-x-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#C19A5B] shrink-0" />
-                      <span>{item.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
-              <div className="pt-4">
-                <button
-                  onClick={() => handleNavClick(`/category/${cat.id}`)}
-                  className="btn-gold w-full py-3 rounded-xl text-xs font-semibold flex items-center justify-center space-x-2 shadow-md"
-                >
-                  <span>Explore {cat.name} Solutions</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
-                </button>
+                <div className="relative z-10 space-y-5">
+                  <div className="border-b border-gray-100 pb-4">
+                    <h3 className="font-heading font-semibold text-2xl sm:text-3xl text-[#111111]">{cat.name}</h3>
+                    <p className="text-xs sm:text-sm text-[#C19A5B] font-semibold mt-1">{cat.tagline}</p>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
+                    {cat.description}
+                  </p>
+
+                  {!isSingleCat && (
+                    <div className="space-y-2 pt-2">
+                      <span className="text-xs font-bold text-[#C19A5B] uppercase tracking-wider block">
+                        Available Solution Fitting:
+                      </span>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium text-gray-800">
+                        {cat.items.map((item) => (
+                          <div key={item.id} className="flex items-center space-x-2">
+                            <CheckCircle2 className="w-4 h-4 text-[#C19A5B] shrink-0" />
+                            <span>{item.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="pt-4">
+                    <button
+                      onClick={() => {
+                        if (isSingleCat) {
+                          handleNavClick(`/products/${cat.singleProductId}`);
+                        } else {
+                          handleNavClick(`/category/${cat.id}`);
+                        }
+                      }}
+                      className="btn-gold w-full py-3 rounded-xl text-xs font-semibold flex items-center justify-center space-x-2 shadow-md"
+                    >
+                      <span>Explore {cat.name} Solutions</span>
+                      <ArrowRight className="w-4 h-4 text-white" />
+                    </button>
+                  </div>
+                </div>
+
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

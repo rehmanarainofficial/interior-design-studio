@@ -57,6 +57,12 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://interiordesignstudiopk.com/category/furniture</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://interiordesignstudiopk.com/category/ceiling</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -69,7 +75,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Popular Solution Products -->
+  <!-- Product Solution Details -->
   <url>
     <loc>https://interiordesignstudiopk.com/products/spc-flooring</loc>
     <lastmod>2026-02-24</lastmod>
@@ -77,19 +83,31 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://interiordesignstudiopk.com/products/vinyl-flooring</loc>
+    <loc>https://interiordesignstudiopk.com/products/wall-to-wall-carpet</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://interiordesignstudiopk.com/products/fluted-panels</loc>
+    <loc>https://interiordesignstudiopk.com/products/center-piece-rugs</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://interiordesignstudiopk.com/products/roller-blinds</loc>
+    <loc>https://interiordesignstudiopk.com/products/pvc-strip-curtains</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/commercial-furniture</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/residential-furniture</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

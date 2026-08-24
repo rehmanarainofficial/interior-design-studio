@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
-import { 
-  Phone, Mail, MapPin, Clock, MessageCircle, Send, CheckCircle, Sparkles
-} from 'lucide-react';
-import SEO from '../components/SEO';
+import React, { useState } from "react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  MessageCircle,
+  Send,
+  CheckCircle,
+  Sparkles,
+} from "lucide-react";
+import SEO from "../components/SEO";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -14,22 +21,21 @@ export default function Contact() {
 
   return (
     <div className="font-sans text-[#111111] bg-[#FAFAFA] min-h-screen">
-      <SEO 
+      <SEO
         title="Contact Us & Flagship Karachi Showroom"
         description="Visit our flagship Karachi showroom at Shop No 132, Shamim Sky Tower, Block 9 Yaseenabad, F.B Area, or call 0310 2321899 to book a free doorstep site survey."
         keywords="contact interior design studio, karachi showroom address, yaseenabad interior showroom, book site survey karachi, call 03102321899"
       />
-      
+
       {/* ========================================================================= */}
       {/* LUXURY HERO BANNER MATCHING REFERENCE IMAGE */}
       {/* ========================================================================= */}
       <section className="relative min-h-[55vh] flex items-center justify-center overflow-hidden py-24 px-4 sm:px-6 lg:px-8 bg-[#262628] text-white border-b border-[#C19A5B]/30">
-        
         {/* Background Unsplash Showroom Photograph */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=2560" 
-            alt="Contact Showroom Banner" 
+          <img
+            src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=2560"
+            alt="Contact Showroom Banner"
             className="w-full h-full object-cover brightness-90 contrast-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#262628]/95 via-[#262628]/85 to-[#262628]/60" />
@@ -45,11 +51,14 @@ export default function Contact() {
 
           <h1 className="font-heading font-medium text-4xl sm:text-6xl lg:text-7xl text-white leading-tight">
             Contact Us & Visit <br />
-            <span className="italic font-normal text-[#FFF0DC]">Our Karachi Showroom</span>
+            <span className="italic font-normal text-[#FFF0DC]">
+              Our Karachi Showroom
+            </span>
           </h1>
 
           <p className="text-sm sm:text-lg text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
-            Visit our physical flagship showroom in Federal B Area, Karachi, or request a doorstep site survey with physical texture samples.
+            Visit our physical flagship showroom in Federal B Area, Karachi, or
+            request a doorstep site survey with physical texture samples.
           </p>
 
           <div className="pt-2 flex flex-wrap justify-center gap-4">
@@ -72,29 +81,33 @@ export default function Contact() {
             </a>
           </div>
         </div>
-
       </section>
 
       {/* Main Form & Info Grid Area */}
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
           {/* Showroom Details Box */}
           <div className="lg:col-span-5 bg-[#262628] text-white p-8 sm:p-10 rounded-3xl border border-[#C19A5B]/30 space-y-8 shadow-xl">
             <div>
               <h2 className="font-heading font-semibold text-2xl text-white">
                 Flagship Karachi Showroom
               </h2>
-              <p className="text-xs text-gray-300 mt-1">Visit our showroom to inspect full-size installed material mockups.</p>
+              <p className="text-xs text-gray-300 mt-1">
+                Visit our showroom to inspect full-size installed material
+                mockups.
+              </p>
             </div>
 
             <div className="space-y-6 text-xs sm:text-sm font-medium">
               <div className="flex items-start space-x-3.5">
                 <MapPin className="w-5 h-5 text-[#C19A5B] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-bold">Showroom Address:</strong>
+                  <strong className="text-white block font-bold">
+                    Showroom Address:
+                  </strong>
                   <span className="text-gray-300 leading-relaxed block">
-                    Shop No 132, Shamim Sky Tower, Federal B Area Block 9 Yaseenabad, Karachi, Pakistan.
+                    Shop No 132, Shamim Sky Tower, Federal B Area Block 9
+                    Yaseenabad, Karachi, Pakistan.
                   </span>
                 </div>
               </div>
@@ -102,24 +115,42 @@ export default function Contact() {
               <div className="flex items-center space-x-3.5">
                 <Phone className="w-5 h-5 text-[#C19A5B] shrink-0" />
                 <div>
-                  <strong className="text-white block font-bold">Direct Phone / Call:</strong>
-                  <a href="tel:03102321899" className="text-[#C19A5B] hover:underline font-bold text-base sm:text-lg">0310 2321899</a>
+                  <strong className="text-white block font-bold">
+                    Direct Phone / Call:
+                  </strong>
+                  <a
+                    href="tel:03102321899"
+                    className="text-[#C19A5B] hover:underline font-bold text-base sm:text-lg"
+                  >
+                    0310 2321899
+                  </a>
                 </div>
               </div>
 
               <div className="flex items-center space-x-3.5">
                 <Mail className="w-5 h-5 text-[#C19A5B] shrink-0" />
                 <div>
-                  <strong className="text-white block font-bold">Email Inquiry:</strong>
-                  <a href="mailto:info@interiordesignstudiopk.com" className="text-gray-300 hover:text-[#C19A5B]">info@interiordesignstudiopk.com</a>
+                  <strong className="text-white block font-bold">
+                    Email Inquiry:
+                  </strong>
+                  <a
+                    href="mailto:interiordesignstudiopk@gmail.com"
+                    className="text-gray-300 hover:text-[#C19A5B]"
+                  >
+                    interiordesignstudiopk@gmail.com
+                  </a>
                 </div>
               </div>
 
               <div className="flex items-center space-x-3.5">
                 <Clock className="w-5 h-5 text-[#C19A5B] shrink-0" />
                 <div>
-                  <strong className="text-white block font-bold">Opening Hours:</strong>
-                  <span className="text-gray-300">Monday - Saturday: 11:00 AM - 9:00 PM</span>
+                  <strong className="text-white block font-bold">
+                    Opening Hours:
+                  </strong>
+                  <span className="text-gray-300">
+                    Monday - Saturday: 11:00 AM - 9:00 PM
+                  </span>
                 </div>
               </div>
             </div>
@@ -144,27 +175,36 @@ export default function Contact() {
             {submitted ? (
               <div className="p-8 text-center space-y-3 bg-[#FFF0DC] rounded-2xl border border-[#C19A5B]/30">
                 <CheckCircle className="w-12 h-12 text-[#C19A5B] mx-auto" />
-                <h4 className="font-heading text-xl font-bold text-[#111111]">Inquiry Received!</h4>
-                <p className="text-xs text-gray-700">Thank you! Our senior contractor will contact you at 0310 2321899 within 1 hour.</p>
+                <h4 className="font-heading text-xl font-bold text-[#111111]">
+                  Inquiry Received!
+                </h4>
+                <p className="text-xs text-gray-700">
+                  Thank you! Our senior contractor will contact you at 0310
+                  2321899 within 1 hour.
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-[#111111] mb-1">Your Name *</label>
-                    <input 
-                      type="text" 
-                      required 
-                      placeholder="Tariq Mansoor"
+                    <label className="block text-xs font-bold text-[#111111] mb-1">
+                      Your Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Full Name"
                       className="w-full bg-gray-50 border border-gray-300 focus:border-[#C19A5B] focus:bg-white rounded-xl p-3.5 text-xs text-gray-900 outline-none font-semibold"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-[#111111] mb-1">Phone / WhatsApp *</label>
-                    <input 
-                      type="tel" 
-                      required 
-                      placeholder="0310 2321899"
+                    <label className="block text-xs font-bold text-[#111111] mb-1">
+                      Phone / WhatsApp *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      placeholder="Phone Number / WhatsApp"
                       className="w-full bg-gray-50 border border-gray-300 focus:border-[#C19A5B] focus:bg-white rounded-xl p-3.5 text-xs text-gray-900 outline-none font-semibold"
                     />
                   </div>
@@ -172,20 +212,26 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-[#111111] mb-1">City / Area *</label>
-                    <input 
-                      type="text" 
-                      required 
-                      placeholder="Karachi (DHA, Clifton, Gulshan...)"
+                    <label className="block text-xs font-bold text-[#111111] mb-1">
+                      City / Area *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Enter your city or area"
                       className="w-full bg-gray-50 border border-gray-300 focus:border-[#C19A5B] focus:bg-white rounded-xl p-3.5 text-xs text-gray-900 outline-none font-semibold"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-[#111111] mb-1">Service Category *</label>
+                    <label className="block text-xs font-bold text-[#111111] mb-1">
+                      Service Category *
+                    </label>
                     <select className="w-full bg-gray-50 border border-gray-300 focus:border-[#C19A5B] focus:bg-white rounded-xl p-3.5 text-xs text-gray-900 outline-none cursor-pointer font-semibold">
                       <option>Flooring (SPC, Vinyl, Hardwood)</option>
                       <option>Window Blinds (Roller, Zebra, Motorized)</option>
-                      <option>Wall Covering (3D Wallpaper, Fluted Slats)</option>
+                      <option>
+                        Wall Covering (3D Wallpaper, Fluted Slats)
+                      </option>
                       <option>False Ceiling Execution</option>
                       <option>Fiber Glass Shades & Canopies</option>
                     </select>
@@ -193,10 +239,12 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#111111] mb-1">Project Details / Message</label>
-                  <textarea 
-                    rows="4" 
-                    placeholder="Specify your room dimensions or ask any questions..."
+                  <label className="block text-xs font-bold text-[#111111] mb-1">
+                    Project Details / Message
+                  </label>
+                  <textarea
+                    rows="4"
+                    placeholder="Enter your project details or service requirements"
                     className="w-full bg-gray-50 border border-gray-300 focus:border-[#C19A5B] focus:bg-white rounded-xl p-3.5 text-xs text-gray-900 outline-none resize-none font-normal"
                   />
                 </div>
@@ -211,10 +259,8 @@ export default function Contact() {
               </form>
             )}
           </div>
-
         </div>
       </div>
-
     </div>
   );
 }

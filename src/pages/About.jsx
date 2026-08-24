@@ -2,8 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   Sparkles, ShieldCheck, Award, ArrowRight, CheckCircle2, Phone, MapPin, 
-  Building2, Home as HomeIcon, Dumbbell, Stethoscope, MessageCircle, Clock, 
-  Ruler, PackageCheck, Hammer, Globe, Star, Users, Check
+  Building2, MessageCircle, Clock, Ruler, PackageCheck, Hammer, Feather, Users, Check
 } from 'lucide-react';
 import SEO from '../components/SEO';
 
@@ -41,7 +40,7 @@ export default function About({ onOpenQuote }) {
           <div className="inline-flex items-center space-x-2 bg-[#C19A5B]/20 backdrop-blur-md border border-[#C19A5B]/40 px-3.5 sm:px-4 py-1.5 rounded-full shadow-lg max-w-full overflow-hidden">
             <Sparkles className="w-3.5 h-3.5 text-[#C19A5B] shrink-0" />
             <span className="text-[10px] sm:text-xs font-semibold text-[#C19A5B] uppercase tracking-wider whitespace-nowrap">
-              Turnkey Contracting Legacy • Est. 2011
+              Turnkey Contracting Legacy • Est. 2018
             </span>
           </div>
 
@@ -50,7 +49,7 @@ export default function About({ onOpenQuote }) {
             <span className="italic font-normal text-[#FFF0DC]">Extraordinary Spaces</span>
           </h1>
 
-          <div className="grid grid-cols-2 gap-4 pt-2">
+          <div className="grid grid-cols-2 gap-4 pt-2 max-w-md mx-auto">
             <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
               <span className="font-heading text-3xl font-semibold text-[#C19A5B]">500+</span>
               <span className="text-xs text-gray-300 block mt-1 font-medium">Completed Projects</span>
@@ -89,93 +88,74 @@ export default function About({ onOpenQuote }) {
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. DEDICATED SECTION: WHY INTERIOR DESIGN STUDIO */}
+      {/* 2. DEDICATED SECTION: WHY INTERIOR DESIGN STUDIO (MATCHING REFERENCE IMAGE) */}
       {/* ========================================================================= */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-          <span className="text-xs font-bold text-[#C19A5B] uppercase tracking-widest bg-[#FFF0DC] px-4 py-1.5 rounded-full border border-[#C19A5B]/20">
-            Why Choose Us
-          </span>
-          <h2 className="font-heading text-3xl sm:text-5xl font-semibold text-[#111111] mt-3">
-            Why Interior Design Studio
-          </h2>
-          <p className="text-sm sm:text-base text-gray-600 font-normal">
-            6 core reasons why homeowners, corporate directors, and principal architects trust us for site execution in Karachi.
-          </p>
+        {/* Header matching reference image layout */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-gray-200 pb-8 mb-12">
+          <div>
+            <h2 className="font-heading text-3xl sm:text-5xl font-semibold text-[#111111]">
+              Why Interior Design Studio
+            </h2>
+          </div>
+          <div className="text-xs sm:text-sm text-gray-500 font-medium md:border-l border-gray-300 md:pl-6">
+            Transform Your Space with Luxury Interior Contracting in Karachi
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* 4 Cards matching reference image layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
-          <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFF0DC] text-[#C19A5B] flex items-center justify-center font-bold text-xl">
-              <ShieldCheck className="w-6 h-6" />
+          {/* Card 1 */}
+          <div className="space-y-4">
+            <div className="w-10 h-10 rounded-xl bg-[#FFF0DC] text-[#C19A5B] flex items-center justify-center">
+              <Feather className="w-5 h-5" />
             </div>
-            <h3 className="font-heading font-semibold text-2xl text-[#111111]">
-              100% Water & Termite Guarantee
+            <h3 className="font-heading font-semibold text-xl text-[#111111]">
+              Expertise in Bespoke Luxury
             </h3>
             <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
-              Heavy-duty rigid core SPC flooring and PVC wall cladding specially engineered to withstand Karachi's high humidity and coastal moisture with zero swelling.
+              Interior Design Studio stands out as a premier choice for those seeking bespoke luxury interior execution. Our team specializes in creating personalized, opulent spaces that reflect the individuality and lifestyle of our clients. From conceptualization to flawless site execution, we bring a unique touch to each project, ensuring a result that exceeds expectations.
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFF0DC] text-[#C19A5B] flex items-center justify-center font-bold text-xl">
-              <Ruler className="w-6 h-6" />
+          {/* Card 2 */}
+          <div className="space-y-4">
+            <div className="w-10 h-10 rounded-xl bg-[#FFF0DC] text-[#C19A5B] flex items-center justify-center">
+              <Hammer className="w-5 h-5" />
             </div>
-            <h3 className="font-heading font-semibold text-2xl text-[#111111]">
-              Laser Precision Site Survey
+            <h3 className="font-heading font-semibold text-xl text-[#111111]">
+              Unparalleled Craftsmanship
             </h3>
             <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
-              Digital 3D laser measurement of room parameters and subfloor dampness inspection before material cut, eliminating material shortfall or excess.
+              At Interior Design Studio, craftsmanship is at the core of our design and contracting philosophy. Our skilled artisans are dedicated to achieving perfection in every detail. From intricate woodwork to precision subfloor levelling and seamless joint assembly, our commitment to flawless execution sets us apart. The result is a space that not only looks stunning but also exudes quality.
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFF0DC] text-[#C19A5B] flex items-center justify-center font-bold text-xl">
-              <PackageCheck className="w-6 h-6" />
+          {/* Card 3 */}
+          <div className="space-y-4">
+            <div className="w-10 h-10 rounded-xl bg-[#FFF0DC] text-[#C19A5B] flex items-center justify-center">
+              <Award className="w-5 h-5" />
             </div>
-            <h3 className="font-heading font-semibold text-2xl text-[#111111]">
-              Doorstep Sample Catalogues
+            <h3 className="font-heading font-semibold text-xl text-[#111111]">
+              Innovative Material Solutions
             </h3>
             <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
-              Our senior contracting team visits your home or office with physical texture samples and shade kits so you can test materials under real room lighting.
+              Choose Interior Design Studio for innovative and forward-thinking contracting solutions. Our team embraces modern material science—from 100% water and termite proof rigid core SPC flooring to damp-proof PVC cladding and thermal motorized blinds—ensuring your space reflects contemporary trends while maintaining timeless durability and functionality.
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFF0DC] text-[#C19A5B] flex items-center justify-center font-bold text-xl">
-              <Hammer className="w-6 h-6" />
+          {/* Card 4 */}
+          <div className="space-y-4">
+            <div className="w-10 h-10 rounded-xl bg-[#FFF0DC] text-[#C19A5B] flex items-center justify-center">
+              <Users className="w-5 h-5" />
             </div>
-            <h3 className="font-heading font-semibold text-2xl text-[#111111]">
-              Clean Dust-Free Fitting
+            <h3 className="font-heading font-semibold text-xl text-[#111111]">
+              Client-Centric Approach & Trust
             </h3>
             <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
-              Master craftsmen handle underlayment, subfloor levelling, click-lock jointing, and perimeter wall skirtings with minimal noise and zero dust.
-            </p>
-          </div>
-
-          <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFF0DC] text-[#C19A5B] flex items-center justify-center font-bold text-xl">
-              <MapPin className="w-6 h-6" />
-            </div>
-            <h3 className="font-heading font-semibold text-2xl text-[#111111]">
-              Karachi Main Showroom
-            </h3>
-            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
-              Physical flagship showroom located at Shop No 132, Shamim Sky Tower, Federal B Area Block 9 Yaseenabad, Karachi.
-            </p>
-          </div>
-
-          <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#FFF0DC] text-[#C19A5B] flex items-center justify-center font-bold text-xl">
-              <Award className="w-6 h-6" />
-            </div>
-            <h3 className="font-heading font-semibold text-2xl text-[#111111]">
-              20-Year Workmanship Warranty
-            </h3>
-            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
-              Long-term material stability and fitting warranty backed by prompt local customer support and post-installation inspections.
+              Interior Design Studio prioritizes a client-centric approach, making your satisfaction and vision our top priority. We engage in open communication throughout the measurement and installation process, providing doorstep sample testing and digital laser surveys. With a commitment to excellence and 20-year warranties, we strive to make your experience truly exceptional.
             </p>
           </div>
 
@@ -189,12 +169,12 @@ export default function About({ onOpenQuote }) {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-sm space-y-8 text-center max-w-4xl mx-auto">
           
-          <div className="lg:col-span-6 space-y-6">
-            <span className="text-xs font-bold text-[#C19A5B] uppercase tracking-widest bg-[#C19A5B]/15 px-3.5 py-1 rounded-full border border-[#C19A5B]/30">
-              Our Journey
+          <div className="space-y-3">
+            <span className="text-xs font-bold text-[#C19A5B] uppercase tracking-widest bg-[#FFF0DC] px-4 py-1.5 rounded-full border border-[#C19A5B]/20">
+              Visit Us in Karachi
             </span>
-            <h2 className="font-heading text-3xl sm:text-5xl font-semibold text-[#111111] leading-tight">
-              7+ Years of On-Site Execution Standards
+            <h2 className="font-heading text-3xl sm:text-5xl font-semibold text-[#111111]">
+              Ready to Transform Your Property?
             </h2>
             <p className="text-xs sm:text-sm text-gray-600 max-w-2xl mx-auto font-normal">
               Visit our Karachi showroom at Shop No 132, Shamim Sky Tower, Federal B Area Block 9 Yaseenabad, or call us directly at 0310 2321899.

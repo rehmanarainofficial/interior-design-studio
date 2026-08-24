@@ -33,7 +33,7 @@ export default function Footer({ onOpenQuote }) {
               <img 
                 src="/full logo.png" 
                 alt="Interior Design Studio Pakistan" 
-                className="h-16 invert sm:h-20 lg:h-28 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-12 invert sm:h-16 lg:h-20 w-auto object-contain transition-transform group-hover:scale-105"
               />
             </button>
 

@@ -38,9 +38,9 @@ export default function About({ onOpenQuote }) {
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center space-x-2 bg-[#C19A5B]/20 backdrop-blur-md border border-[#C19A5B]/40 px-4 py-1.5 rounded-full shadow-lg">
-            <Sparkles className="w-4 h-4 text-[#C19A5B]" />
-            <span className="text-xs font-semibold text-[#C19A5B] uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2 bg-[#C19A5B]/20 backdrop-blur-md border border-[#C19A5B]/40 px-3.5 sm:px-4 py-1.5 rounded-full shadow-lg max-w-full overflow-hidden">
+            <Sparkles className="w-3.5 h-3.5 text-[#C19A5B] shrink-0" />
+            <span className="text-[10px] sm:text-xs font-semibold text-[#C19A5B] uppercase tracking-wider whitespace-nowrap">
               Turnkey Contracting Legacy • Est. 2011
             </span>
           </div>

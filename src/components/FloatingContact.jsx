@@ -8,16 +8,17 @@ export default function FloatingContact() {
   )}`;
 
   return (
-    <div className="fixed bottom-6 left-6 z-50 flex items-center">
+    // Hidden on mobile (hidden md:flex) as requested by user
+    <div className="hidden md:flex fixed bottom-6 left-6 z-50 items-center">
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center bg-[#25D366] hover:bg-[#20bd5a] text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105"
+        className="group flex items-center bg-[#25D366] hover:bg-[#20bd5a] text-white p-3.5 px-5 py-3.5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105"
         aria-label="Direct WhatsApp Contact"
       >
         <MessageCircle className="w-6 h-6 fill-current shrink-0" />
-        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap text-xs font-extrabold sm:max-w-xs sm:ml-2.5">
+        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap text-xs font-extrabold max-w-xs ml-2.5">
           WhatsApp Direct Inquiry
         </span>
       </a>

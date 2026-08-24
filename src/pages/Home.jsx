@@ -171,9 +171,10 @@ export default function Home({ onOpenQuote }) {
         {/* Main Hero Content */}
         <div className="relative z-10 max-w-6xl mx-auto w-full text-left space-y-8 animate-fade-in my-auto">
           
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-full shadow-lg">
-            <span className="text-xs font-semibold text-white tracking-wide">
-              🏛️ {counts.projects.toLocaleString()}+ Projects Completed
+          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 sm:px-4 py-1.5 rounded-full shadow-lg max-w-full overflow-hidden">
+            <Building2 className="w-3.5 h-3.5 text-[#C19A5B] shrink-0" />
+            <span className="text-[10px] sm:text-xs font-semibold text-white tracking-wide whitespace-nowrap">
+              {counts.projects.toLocaleString()}+ Projects Completed
             </span>
           </div>
 
@@ -595,7 +596,7 @@ export default function Home({ onOpenQuote }) {
 
           {PROJECTS_DATA.length === 0 ? (
             <div className="p-12 text-center bg-gray-50 rounded-3xl border border-gray-200 space-y-3">
-              <span className="text-3xl">🔍</span>
+              <Search className="w-8 h-8 text-[#C19A5B] mx-auto" />
               <h4 className="font-heading text-xl font-semibold text-[#111111]">No Executed Projects Found</h4>
               <p className="text-xs sm:text-sm text-gray-500">Please select another category filter to explore our completed site portfolio.</p>
             </div>

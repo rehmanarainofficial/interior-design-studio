@@ -271,8 +271,9 @@ export default function ProductDetail({ onOpenQuote }) {
                   </span>
                   <div className="flex flex-wrap gap-2">
                     {solution.targetSpaces.map((space, i) => (
-                      <span key={i} className="text-xs bg-white text-gray-800 font-semibold px-3.5 py-1.5 rounded-xl border border-gray-200 shadow-sm">
-                        ✓ {space}
+                      <span key={i} className="text-xs bg-white text-gray-800 font-semibold px-3 py-1.5 rounded-xl border border-gray-200 shadow-sm inline-flex items-center space-x-1.5">
+                        <Check className="w-3.5 h-3.5 text-[#C19A5B]" />
+                        <span>{space}</span>
                       </span>
                     ))}
                   </div>

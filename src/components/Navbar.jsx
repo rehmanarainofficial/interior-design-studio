@@ -94,7 +94,7 @@ export default function Navbar({ onOpenQuote }) {
             <img 
               src="/full logo.png" 
               alt="Interior Design Studio Pakistan" 
-              className="h-14 sm:h-16 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-9 sm:h-11 lg:h-12 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </button>
 
@@ -251,7 +251,7 @@ export default function Navbar({ onOpenQuote }) {
               <img 
                 src="/full logo.png" 
                 alt="Interior Design Studio Pakistan" 
-                className="h-14 invert w-auto object-contain"
+                className="h-10 sm:h-12 invert w-auto object-contain"
               />
             </button>
 
@@ -292,7 +292,7 @@ export default function Navbar({ onOpenQuote }) {
                         onClick={() => handleNavClick(`/category/${cat.id}`)}
                         className="block text-lg font-bold text-white hover:text-[#C19A5B] flex items-center space-x-2"
                       >
-                        <span className="text-[#C19A5B]">•</span>
+                        <ChevronRight className="w-4 h-4 text-[#C19A5B]" />
                         <span>{cat.name} ({cat.items.length})</span>
                       </button>
                       <div className="grid grid-cols-1 gap-1.5 pl-4">
@@ -337,7 +337,7 @@ export default function Navbar({ onOpenQuote }) {
               onClick={() => handleNavClick('/contact')}
               className="block w-full text-left font-heading text-3xl font-semibold text-white hover:text-[#C19A5B] transition-colors"
             >
-              Contact & Showroom
+              Contact
             </button>
 
           </div>

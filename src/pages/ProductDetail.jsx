@@ -223,6 +223,8 @@ export default function ProductDetail({ onOpenQuote }) {
               <img 
                 src={selectedImage || solution.image} 
                 alt={solution.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-all duration-700"
               />
             </div>
@@ -238,7 +240,7 @@ export default function ProductDetail({ onOpenQuote }) {
                       selectedImage === imgUrl ? 'border-[#C19A5B] scale-105 shadow-md' : 'border-gray-200 opacity-70 hover:opacity-100'
                     }`}
                   >
-                    <img src={imgUrl} alt={`Gallery ${idx}`} className="w-full h-full object-cover" />
+                    <img src={imgUrl} alt={`Gallery ${idx}`} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>

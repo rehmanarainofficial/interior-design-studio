@@ -50,8 +50,10 @@ export default function CategoryPage({ onOpenQuote }) {
                 <div>
                   <div className="relative h-60 overflow-hidden bg-gray-100">
                     <img 
-                      src={detail.image || 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&q=80&w=800'}
+                      src={detail.image || '/images/products/img_1.webp'}
                       alt={item.name}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     {item.badge && (

@@ -231,6 +231,16 @@ export default function Home({ onOpenQuote }) {
           {/* Interactive Property Category Pill Tabs */}
           <div className="flex flex-wrap gap-2.5 pt-2">
             <button
+              onClick={() => setHeroCategory("hospitality")}
+              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
+                heroCategory === "hospitality"
+                  ? "bg-white text-[#111111] shadow-lg scale-105 font-bold"
+                  : "bg-black/40 backdrop-blur-md text-gray-200 border border-white/20 hover:bg-white/20"
+              }`}
+            >
+              Hospitality
+            </button>
+            <button
               onClick={() => setHeroCategory("residential")}
               className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
                 heroCategory === "residential"
@@ -250,17 +260,6 @@ export default function Home({ onOpenQuote }) {
               }`}
             >
               Commercial
-            </button>
-
-            <button
-              onClick={() => setHeroCategory("hospitality")}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
-                heroCategory === "hospitality"
-                  ? "bg-white text-[#111111] shadow-lg scale-105 font-bold"
-                  : "bg-black/40 backdrop-blur-md text-gray-200 border border-white/20 hover:bg-white/20"
-              }`}
-            >
-              Hospitality
             </button>
           </div>
 

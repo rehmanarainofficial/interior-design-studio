@@ -78,7 +78,7 @@ export default function Footer({ onOpenQuote }) {
             <div className="flex items-center space-x-3 pt-2">
               {/* Facebook */}
               <a
-                href="https://facebook.com"
+                href="https://facebook.com/interiordesignstudiopk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#1877F2] transition-all shadow-md"
@@ -91,7 +91,7 @@ export default function Footer({ onOpenQuote }) {
 
               {/* Instagram */}
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/interiordesignstudiopk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#E4405F] transition-all shadow-md"

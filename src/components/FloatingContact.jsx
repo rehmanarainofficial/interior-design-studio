@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function FloatingContact() {
   const whatsappNumber = '923102321899';
@@ -9,8 +10,8 @@ export default function FloatingContact() {
 
   return (
     <div className="fixed bottom-6 left-6 z-50 flex items-center">
-      <a
-        href={whatsappUrl}
+      <Link
+        to={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="relative group flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white p-3.5 sm:p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 border-2 border-white/20"
@@ -21,7 +22,7 @@ export default function FloatingContact() {
         
         {/* WhatsApp Icon */}
         <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 fill-current relative z-10" />
-      </a>
+      </Link>
     </div>
   );
 }

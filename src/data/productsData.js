@@ -106,11 +106,11 @@ export const SOLUTIONS_DATA = {
     categoryName: 'Flooring',
     subtitle: '100% Water & Termite Proof Rigid Core Wood Plank Execution',
     description: 'We supply and professionally fit SPC (Stone Plastic Composite) rigid core wood flooring for bedrooms, drawing rooms, TV lounges, and kitchens.',
-    image: '/images/products/img_1.webp',
+    image: '/images/products/img_3.webp',
     gallery: [
+      '/images/products/img_3.webp',
       '/images/products/img_1.webp',
       '/images/products/img_2.webp',
-      '/images/products/img_3.webp',
       '/images/products/img_4.webp'
     ],
     targetSpaces: ['Bedrooms & TV Lounges', 'Luxury Villas', 'Kitchens & Dining Areas'],
@@ -144,11 +144,11 @@ export const SOLUTIONS_DATA = {
     categoryName: 'Flooring',
     subtitle: 'Smooth, Water-Resistant Vinyl Planks & Sheet Laying',
     description: 'Professional PVC vinyl flooring installation for residential apartments and rental properties.',
-    image: '/images/products/img_9.webp',
+    image: '/images/products/vinyl-flooring_new_1.webp',
     gallery: [
-      '/images/products/img_9.webp',
-      '/images/products/img_10.webp',
-      '/images/products/img_11.webp'
+      '/images/products/vinyl-flooring_new_1.webp',
+      '/images/products/vinyl-flooring_new_2.webp',
+      '/images/products/vinyl-flooring_new_3.webp'
     ],
     targetSpaces: ['Apartments & Rentals', 'Commercial Offices', 'Shops'],
     features: ['Moisture & Water Resistant Surface', 'Quick Glue-Down Site Execution'],
@@ -198,9 +198,8 @@ export const SOLUTIONS_DATA = {
     categoryName: 'Flooring',
     subtitle: 'Hand-Crafted Designer Center Pieces for Drawing & TV Lounges',
     description: 'Exquisite hand-tufted designer center piece rugs in modern geometric and traditional textures.',
-    image: '/images/products/img_18.webp',
+    image: '/images/products/img_19.webp',
     gallery: [
-      '/images/products/img_18.webp',
       '/images/products/img_19.webp',
       '/images/products/img_20.webp',
       '/images/products/img_21.webp'
@@ -217,11 +216,10 @@ export const SOLUTIONS_DATA = {
     categoryName: 'Flooring',
     subtitle: 'Cushioned Educational Foam Tiles for Schools',
     description: 'Soft cushioned EVA foam puzzle tile fitting for nursery classrooms and play areas.',
-    image: '/images/products/img_22.webp',
+    image: '/images/products/kids-eva-flooring_new_1.webp',
     gallery: [
-      '/images/products/img_22.webp',
-      '/images/products/img_23.webp',
-      '/images/products/img_24.webp'
+      '/images/products/kids-eva-flooring_new_1.webp',
+      '/images/products/kids-eva-flooring_new_2.webp'
     ],
     targetSpaces: ['Kindergartens', 'Daycares', 'Play Schools'],
     features: ['Non-Toxic BPA & Phthalate Free EVA Foam', 'Soft Cushion Fall Protection'],
@@ -288,11 +286,11 @@ export const SOLUTIONS_DATA = {
     categoryName: 'Flooring',
     subtitle: 'Modular Heavy-Duty Carpet Squares for Offices & Banks',
     description: 'High sound-dampening commercial carpet tile installation for corporate offices and banks.',
-    image: '/images/products/img_31.webp',
+    image: '/images/products/carpet-tiles_new_1.webp',
     gallery: [
-      '/images/products/img_31.webp',
-      '/images/products/img_32.webp',
-      '/images/products/img_33.webp'
+      '/images/products/carpet-tiles_new_1.webp',
+      '/images/products/carpet-tiles_new_2.webp',
+      '/images/products/carpet-tiles_new_3.webp'
     ],
     targetSpaces: ['Corporate Offices', 'Call Centers', 'Banks'],
     features: ['Noise Reduction Coefficient (NRC > 0.25)', 'Modular Replacement'],
@@ -579,7 +577,10 @@ export const SOLUTIONS_DATA = {
     categoryName: 'Furniture',
     subtitle: 'Corporate Executive Tables, Conference Desks & Workstations',
     description: 'Custom bespoke manufacturing and installation of executive director desks and boardroom tables.',
-    image: '/images/products/img_66.webp',
+    image: '/images/products/commercial-furniture_new_1.webp',
+    gallery: [
+      '/images/products/commercial-furniture_new_1.webp'
+    ],
     targetSpaces: ['Executive Director Suites', 'Boardrooms'],
     features: ['Custom Wood Veneer & Laminate Finishes'],
     specifications: { 'Service Type': 'Custom Manufacturing & Site Assembly' }
@@ -592,7 +593,11 @@ export const SOLUTIONS_DATA = {
     categoryName: 'Furniture',
     subtitle: 'Bespoke Master Beds, Luxury Sofa Sets & Dining Tables',
     description: 'Bespoke handcrafted furniture for luxury bungalows and apartments.',
-    image: '/images/products/img_67.webp',
+    image: '/images/products/residential-furniture_new_1.webp',
+    gallery: [
+      '/images/products/residential-furniture_new_1.webp',
+      '/images/products/residential-furniture_new_2.webp'
+    ],
     targetSpaces: ['Master Bedrooms', 'Living Lounges'],
     features: ['Custom Solid Wood & Italian Velvet Upholstery'],
     specifications: { 'Wood Species': 'Seasoned Teak / Sheesham Solid Wood' }
@@ -607,8 +612,12 @@ export const SOLUTIONS_DATA = {
     categoryName: 'Kitchen',
     subtitle: 'High-Gloss Acrylic, UV & Solid Wood Modular Kitchen Execution',
     description: 'Bespoke modular kitchen manufacturing and site fitting. High-gloss acrylic shutters and Blum soft-close hardware.',
-    image: '/images/products/kitchen_1.webp',
-    gallery: ['/images/products/kitchen_1.webp', '/images/products/kitchen_2.webp', '/images/products/kitchen_3.webp'],
+    image: '/images/products/kitchen_new_1.webp',
+    gallery: [
+      '/images/products/kitchen_new_1.webp',
+      '/images/products/kitchen_new_2.webp',
+      '/images/products/kitchen_new_3.webp'
+    ],
     targetSpaces: ['Luxury Villa Kitchens', 'Modern Apartments'],
     features: ['Soft-Close German Hardware Integration'],
     specifications: { 'Hardware Grade': 'Blum Soft-Close Dampening System' }

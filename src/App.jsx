@@ -11,6 +11,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import QuoteModal from './components/QuoteModal';
 import FloatingContact from './components/FloatingContact';
+import ScrollToTop from './components/ScrollToTop';
 import { ChevronUp } from 'lucide-react';
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] flex flex-col font-sans selection:bg-[#C19A5B] selection:text-white">
+      <ScrollToTop />
       <Navbar onOpenQuote={() => setIsQuoteOpen(true)} />
 
       <main className="flex-grow">

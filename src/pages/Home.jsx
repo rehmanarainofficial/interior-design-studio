@@ -39,9 +39,8 @@ import SEO from "../components/SEO";
 
 // Hero background images mapping per property category
 const HERO_BACKGROUNDS = {
-  residential: "/images/products/hero_residential.webp",
+  residential: "/images/products/hero_hospitality.webp",
   commercial: "/images/products/hero_commercial.webp",
-  hospitality: "/images/products/hero_hospitality.webp",
 };
 
 // Extended Testimonials with Direct Verified Links
@@ -215,31 +214,20 @@ export default function Home({ onOpenQuote }) {
           </div>
 
           <h1 className="font-heading font-medium text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight max-w-4xl">
-            Transforming Spaces <br />
-            Into Extraordinary <br />
+            Premium Interior Design <br />
+            & Complete Fitting <br />
             <span className="italic font-normal text-[#FFF0DC]">
-              Experiences
+              For Your Dream Space
             </span>
           </h1>
 
           <p className="text-sm sm:text-lg text-gray-200 leading-relaxed font-normal max-w-2xl">
-            Award-winning interior design studio crafting timeless,
-            sophisticated environments for discerning clients across
-            residential, commercial, and hospitality sectors.
+            We supply and professionally install high-quality flooring, window blinds,
+            wall paneling, and custom interior solutions for homes, villas, and commercial offices across Karachi.
           </p>
 
           {/* Interactive Property Category Pill Tabs */}
           <div className="flex flex-wrap gap-2.5 pt-2">
-            <button
-              onClick={() => setHeroCategory("hospitality")}
-              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
-                heroCategory === "hospitality"
-                  ? "bg-white text-[#111111] shadow-lg scale-105 font-bold"
-                  : "bg-black/40 backdrop-blur-md text-gray-200 border border-white/20 hover:bg-white/20"
-              }`}
-            >
-              Hospitality
-            </button>
             <button
               onClick={() => setHeroCategory("residential")}
               className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
@@ -355,7 +343,7 @@ export default function Home({ onOpenQuote }) {
 
             <div className="bg-[#262628] text-white p-8 rounded-3xl border border-[#C19A5B]/30 shadow-xl space-y-3">
               <span className="font-heading font-semibold text-4xl sm:text-5xl text-[#C19A5B] block">
-                1000+
+                500+
               </span>
               <h3 className="font-sans-heading font-bold text-lg text-white">
                 Completed Projects
@@ -368,53 +356,14 @@ export default function Home({ onOpenQuote }) {
 
             <div className="bg-[#262628] text-white p-8 rounded-3xl border border-[#C19A5B]/30 shadow-xl space-y-3">
               <span className="font-heading font-semibold text-4xl sm:text-5xl text-[#C19A5B] block">
-                20-Year
+                7-Year
               </span>
               <h3 className="font-sans-heading font-bold text-lg text-white">
-                Material & Fitting Warranty
+                Industry Expertise
               </h3>
               <p className="text-xs sm:text-sm text-gray-300 font-normal">
-                100% Water, Termite, and Workmanship protection guarantee on all
-                installed SPC and Vinyl floors.
+                Over two decades of experience delivering premium flooring and interior finishing solutions.
               </p>
-            </div>
-          </div>
-
-          {/* Guarantee Badges */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-            <div className="flex items-center space-x-4 bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-              <ShieldCheck className="w-8 h-8 text-[#C19A5B] shrink-0" />
-              <div>
-                <strong className="text-sm text-[#111111] font-bold block">
-                  100% Water & Termite Guarantee
-                </strong>
-                <span className="text-xs text-gray-600 font-normal">
-                  Specially engineered for Pakistani climate and humidity.
-                </span>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4 bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-              <Award className="w-8 h-8 text-[#C19A5B] shrink-0" />
-              <div>
-                <strong className="text-sm text-[#111111] font-bold block">
-                  Laser Site Measurement
-                </strong>
-                <span className="text-xs text-gray-600 font-normal">
-                  Accurate laser site survey and zero material wastage
-                  calculation.
-                </span>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4 bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-              <CheckCircle2 className="w-8 h-8 text-[#C19A5B] shrink-0" />
-              <div>
-                <strong className="text-sm text-[#111111] font-bold block">
-                  Nationwide Fitting Crews
-                </strong>
-                <span className="text-xs text-gray-600 font-normal">
-                  On-site execution in Karachi, Lahore, Islamabad & Rawalpindi.
-                </span>
-              </div>
             </div>
           </div>
         </div>

@@ -214,10 +214,10 @@ export default function Home({ onOpenQuote }) {
           </div>
 
           <h1 className="font-heading font-medium text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight max-w-4xl">
-            Premium Interior Design <br />
-            & Complete Fitting <br />
+            Expert Design, Premium Materials  <br />
+            Flawless Finish, <br />
             <span className="italic font-normal text-[#FFF0DC]">
-              For Your Dream Space
+              Your Dream Interior Starts Here.
             </span>
           </h1>
 

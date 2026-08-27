@@ -214,16 +214,16 @@ export default function Home({ onOpenQuote }) {
           </div>
 
           <h1 className="font-heading font-medium text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight max-w-4xl">
-            Expert Design, Premium Materials  <br />
-            Flawless Finish, <br />
+            Expert Design, Premium Material, Flawless Finish, <br />
             <span className="italic font-normal text-[#FFF0DC]">
               Your Dream Interior Starts Here.
             </span>
           </h1>
 
           <p className="text-sm sm:text-lg text-gray-200 leading-relaxed font-normal max-w-2xl">
-            We supply and professionally install high-quality flooring, window blinds,
-            wall paneling, and custom interior solutions for homes, villas, and commercial offices across Karachi.
+            We supply and professionally install high-quality flooring, window
+            blinds, wall paneling, and custom interior solutions for homes,
+            villas, and commercial offices across Karachi.
           </p>
 
           {/* Interactive Property Category Pill Tabs */}
@@ -362,7 +362,8 @@ export default function Home({ onOpenQuote }) {
                 Industry Expertise
               </h3>
               <p className="text-xs sm:text-sm text-gray-300 font-normal">
-                Over two decades of experience delivering premium flooring and interior finishing solutions.
+                Over two decades of experience delivering premium flooring and
+                interior finishing solutions.
               </p>
             </div>
           </div>

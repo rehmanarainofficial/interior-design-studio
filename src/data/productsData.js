@@ -436,7 +436,7 @@ export const SOLUTIONS_DATA = {
     ],
     targetSpaces: ["Kindergartens", "Daycares", "Play Schools"],
     features: [
-      "Non-Toxic BPA & Phthalate Free EVA Foam",
+      "Non-Toxic BPA & Phthalate EVA Foam",
       "Soft Cushion Fall Protection",
     ],
     specifications: { "Tile Size": "60cm x 60cm x 1.2cm / 2.0cm" },

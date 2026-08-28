@@ -14,7 +14,7 @@ export default function FlooringCalculator({ onOpenQuote }) {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-gray-100 pb-4">
         <div>
           <span className="text-[10px] font-bold uppercase tracking-wider text-[#543A14] bg-[#FFF0DC] px-2.5 py-0.5 rounded">
-            Free Site Survey Helper
+            Site Survey Helper
           </span>
           <h3 className="font-heading font-extrabold text-xl text-[#131010] mt-1">
             Room Area & Material Quantity Estimator

@@ -79,7 +79,7 @@ const ENHANCED_REVIEWS = [
     name: "Hamza Khan",
     role: "Fitness Director, Apex Gym F-7 Islamabad",
     quote:
-      "We ordered 20mm heavy shock-absorbing rubber tiles for our free weight area. Barbell drops are dead quiet now and no subfloor cracking. Outstanding fitting work!",
+      "We ordered 20mm heavy shock-absorbing rubber tiles for our weight area. Barbell drops are dead quiet now and no subfloor cracking. Outstanding fitting work!",
     rating: 5,
     verifiedLink:
       "https://wa.me/923102321899?text=Hi%20Apex%20Gym%20Islamabad%20Project%20Reference",
@@ -771,7 +771,7 @@ export default function Home({ onOpenQuote }) {
               Get in Touch
             </span>
             <h2 className="font-heading text-3xl sm:text-5xl font-semibold text-[#111111] mt-3">
-              Contact Us & Book Free Site Survey
+              Contact Us & Book Site Survey
             </h2>
             <p className="text-xs sm:text-sm text-gray-600">
               Reach out to our senior contracting team for site measurements,

@@ -90,7 +90,6 @@ export default function Navbar({ onOpenQuote }) {
               </span>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -275,7 +274,7 @@ export default function Navbar({ onOpenQuote }) {
               className="btn-gold px-6 py-3 rounded-xl text-xs sm:text-sm font-extrabold flex items-center space-x-2 shadow-md"
             >
               <Sparkles className="w-4 h-4 text-white" />
-              <span>Book Free Site Survey</span>
+              <span>Book Site Survey</span>
             </button>
           </div>
 
@@ -433,7 +432,7 @@ export default function Navbar({ onOpenQuote }) {
                 className="btn-gold py-4 rounded-xl text-center font-bold text-sm shadow-xl flex items-center justify-center space-x-2"
               >
                 <Sparkles className="w-4 h-4 text-white" />
-                <span>Book Free Site Survey</span>
+                <span>Book Site Survey</span>
               </button>
 
               <a

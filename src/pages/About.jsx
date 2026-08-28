@@ -60,7 +60,7 @@ export default function About({ onOpenQuote }) {
               className="btn-gold px-8 py-3.5 rounded-xl text-xs sm:text-sm font-semibold flex items-center space-x-2 shadow-xl"
             >
               <Sparkles className="w-4 h-4 text-white" />
-              <span>Book Free Site Survey</span>
+              <span>Book Site Survey</span>
             </button>
 
             <a
@@ -70,7 +70,7 @@ export default function About({ onOpenQuote }) {
               className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md px-7 py-3.5 rounded-xl text-xs sm:text-sm font-semibold border border-white/20 transition-all flex items-center space-x-2"
             >
               <MessageCircle className="w-4 h-4 text-[#25D366]" />
-              <span>WhatsApp Direct</span>
+              <span>Contact Us</span>
             </a>
           </div>
         </div>
@@ -197,7 +197,7 @@ export default function About({ onOpenQuote }) {
               className="btn-gold px-8 py-4 rounded-xl text-xs sm:text-sm font-semibold flex items-center space-x-2 shadow-xl"
             >
               <Sparkles className="w-4 h-4 text-white" />
-              <span>Book Free Doorstep Site Survey</span>
+              <span>Book Site Survey</span>
             </button>
 
             <a

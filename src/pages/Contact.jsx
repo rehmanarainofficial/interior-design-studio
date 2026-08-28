@@ -23,7 +23,7 @@ export default function Contact() {
     <div className="font-sans text-[#111111] bg-[#FAFAFA] min-h-screen">
       <SEO
         title="Contact Us & Flagship Karachi Showroom"
-        description="Visit our flagship Karachi showroom at Shop No 132, Shamim Sky Tower, Block 9 Yaseenabad, F.B Area, or call 0310 2321899 to book a free doorstep site survey."
+        description="Visit our flagship Karachi showroom at Shop No 132, Shamim Sky Tower, Block 9 Yaseenabad, F.B Area, or call 0310 2321899 to book a doorstep site survey."
         keywords="contact interior design studio, karachi showroom address, yaseenabad interior showroom, book site survey karachi, call 03102321899"
       />
 

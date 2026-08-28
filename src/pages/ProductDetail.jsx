@@ -59,7 +59,7 @@ function getFallbackSolution(slug) {
       title: 'Gym Shock-Absorbing Rubber Tile Fitting',
       categoryName: 'Flooring',
       subtitle: 'Heavy Weight Drop Protection for Commercial Fitness Arenas',
-      description: 'High-density 10mm to 25mm vulcanized rubber tile installation for free weight areas, crossfit boxes, and personal training studios.',
+      description: 'High-density 10mm to 25mm vulcanized rubber tile installation for weight areas, crossfit boxes, and personal training studios.',
       image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200',
       gallery: [
         'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800'
@@ -290,7 +290,7 @@ export default function ProductDetail({ onOpenQuote }) {
                 className="w-full btn-gold py-4 rounded-xl text-sm font-semibold flex items-center justify-center space-x-2 shadow-md"
               >
                 <Sparkles className="w-4 h-4 text-white" />
-                <span>Book Free Site Measurement & Sample Visit</span>
+                <span>Book Site Measurement & Sample Visit</span>
               </button>
 
               <a
@@ -346,7 +346,7 @@ export default function ProductDetail({ onOpenQuote }) {
                 </li>
                 <li className="flex items-center space-x-2">
                   <Check className="w-4 h-4 text-[#C19A5B] shrink-0" />
-                  <span>Clean, dust-free installation with noise mitigation and zero site disruption.</span>
+                  <span>Installation with noise mitigation and zero site disruption.</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <Check className="w-4 h-4 text-[#C19A5B] shrink-0" />

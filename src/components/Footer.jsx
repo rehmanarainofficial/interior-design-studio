@@ -209,7 +209,7 @@ export default function Footer({ onOpenQuote }) {
                   }}
                   className="hover:text-[#C19A5B] transition-colors text-left"
                 >
-                  Free Site Survey
+                  Book Site Survey
                 </button>
               </li>
             </ul>

@@ -26,7 +26,7 @@ export default function QuoteModal({ isOpen, onClose }) {
 
         <div>
           <span className="text-[10px] font-bold text-[#C19A5B] uppercase tracking-widest bg-[#FFF0DC] px-3 py-1 rounded-full border border-[#C19A5B]/20">
-            Free On-Site Service
+            On-Site Service
           </span>
           <h3 className="font-heading font-semibold text-2xl text-[#111111] mt-2">
             Book Site Survey & Sample Visit

@@ -57,11 +57,11 @@ export default function App() {
       {/* Floating WhatsApp Direct Contact (Bottom Left) */}
       <FloatingContact />
 
-      {/* Floating Scroll To Top Button (Bottom Right) */}
+      {/* Floating Scroll To Top Button (Bottom Right) - Hidden on Mobile */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-[#262628] text-[#C19A5B] border border-[#C19A5B]/40 shadow-2xl hover:bg-[#C19A5B] hover:text-white transition-all duration-300 transform hover:scale-110 active:scale-95"
+          className="hidden md:flex fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-[#262628] text-[#C19A5B] border border-[#C19A5B]/40 shadow-2xl hover:bg-[#C19A5B] hover:text-white transition-all duration-300 transform hover:scale-110 active:scale-95 items-center justify-center"
           aria-label="Scroll to top"
         >
           <ChevronUp className="w-5 h-5 stroke-[2.5]" />

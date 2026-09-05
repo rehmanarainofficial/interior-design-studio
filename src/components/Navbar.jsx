@@ -110,6 +110,8 @@ export default function Navbar({ onOpenQuote }) {
             <img
               src="/full logo.png"
               alt="Interior Design Studio Pakistan"
+              width="220"
+              height="48"
               className="h-9 sm:h-11 lg:h-12 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </button>

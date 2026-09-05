@@ -43,47 +43,207 @@ const HERO_BACKGROUNDS = {
   commercial: "/images/products/hero_commercial.webp",
 };
 
-// Extended Testimonials with Direct Verified Links
+// Authentic Google Business Profile Reviews from Google Maps / GBP
 const ENHANCED_REVIEWS = [
   {
-    name: "Tariq Mansoor",
-    role: "Bungalow Homeowner, DHA Phase 8 Karachi",
-    quote:
-      "Interior Design Studio team installed SPC wood flooring in our entire bungalow (3,200 sq ft) in just 3 days! The finish is flawless, 100% waterproof, and their installation crew was extremely clean and professional.",
+    name: "M. Tariq",
+    role: "Verified Google Client",
+    quote: "Highly recommend for flooring and home decor.",
     rating: 5,
-    verifiedLink:
-      "https://wa.me/923102321899?text=Hi%20Tariq%20Mansoor%20Reference%20Site%20DHA%20Karachi",
-    date: "Verified Site Execution • Feb 2026",
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
   },
   {
-    name: "Sameer Alvi",
-    role: "Director, Medicare Hospital Karachi",
-    quote:
-      "They executed seamless antibacterial vinyl floor fitting with hot rod thermal seam welding in 4 Operating Theaters. Excellent work quality and completed strictly on schedule.",
+    name: "Iqra",
+    role: "Verified Google Client",
+    quote: "A big THANK YOU to the team at Interior Design Studio for transforming my space into a haven of beauty and comfort. The attention to detail was exceptional, from the layout and color palette to the choice of furnishings. Highly recommend!",
     rating: 5,
-    verifiedLink:
-      "https://wa.me/923102321899?text=Hi%20Medicare%20Hospital%20Karachi%20Project%20Reference",
-    date: "Verified Commercial Project • Jan 2026",
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
   },
   {
-    name: "Ayesha Shah",
-    role: "Principal Architect, Gulberg Lahore",
-    quote:
-      "My preferred turnkey contractor in Pakistan for office acoustic carpet tiles, gym rubber floors, and fluted WPC wall slats. Highly recommended for site execution.",
+    name: "Shoaib Baig",
+    role: "Verified Google Client",
+    quote: "The interior design studio is by far the BEST I have ever worked with. Their process was clear, seamless and enjoyable. They accommodated every request without hesitation and made sure our vision came to life. 10/10 service and experience!",
     rating: 5,
-    verifiedLink:
-      "https://wa.me/923102321899?text=Hi%20Ayesha%20Shah%20Architect%20Reference",
-    date: "Verified Architect Review • Feb 2026",
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
   },
   {
-    name: "Hamza Khan",
-    role: "Fitness Director, Apex Gym F-7 Islamabad",
-    quote:
-      "We ordered 20mm heavy shock-absorbing rubber tiles for our weight area. Barbell drops are dead quiet now and no subfloor cracking. Outstanding fitting work!",
+    name: "Zeeshan Butt",
+    role: "Verified Google Client",
+    quote: "Amazing work by the interior design studio! They completely transformed our office into a modern and functional space. The team was professional, creative, and attentive to our needs. Highly recommend their services!",
     rating: 5,
-    verifiedLink:
-      "https://wa.me/923102321899?text=Hi%20Apex%20Gym%20Islamabad%20Project%20Reference",
-    date: "Verified Gym Project • Dec 2025",
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Ray Yan",
+    role: "Verified Google Client",
+    quote: "Best interior design studio in Karachi! Their work is really exceptional and top notch.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Arsalan Rajput",
+    role: "Verified Google Client",
+    quote: "Interior Design Studio has completely transformed my home with their stunning work. From the initial consultation to the final execution, the team was professional, creative, and attentive to my preferences. The quality of materials and attention to detail are top-notch. Highly recommend!",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Hammad Hashim",
+    role: "Verified Google Client",
+    quote: "Very good service in Karachi.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Tahir Kalwar",
+    role: "Verified Google Client",
+    quote: "Top notch interior design contractor in Karachi, very satisfied with their work and commitment.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Areeb Malik",
+    role: "Verified Google Client",
+    quote: "Best interior design studio in Karachi! Highly recommended 👍🏻",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Aal-E-Raza",
+    role: "Verified Google Client",
+    quote: "Superior quality products and best services 👍🏻👏🏻",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Kamran Roy",
+    role: "Verified Google Client",
+    quote: "Best interior design studio in Karachi.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Umair Ahmed",
+    role: "Verified Google Client",
+    quote: "Great and professional dynamic interior design team in town.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Adeel Raza",
+    role: "Verified Google Client",
+    quote: "Exceptional interior design services.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Mirza Nasir",
+    role: "Verified Google Client",
+    quote: "Best flooring and interior work in Karachi, I'm satisfied with their work and time commitment. 👏🏻",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Rehan Riaz",
+    role: "Verified Google Client",
+    quote: "Interior design studio work is very good, on time work.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Saad Bin Tariq",
+    role: "Verified Google Client",
+    quote: "Amazing experience! The team at Interior Design Studio transformed our space into something truly special with great quality and professionalism.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Ameer Hamza",
+    role: "Verified Google Client",
+    quote: "Interior Design Studio delivered exceptional quality on our project with top grade flooring and wall panels. Very cooperative team and on-time delivery. Highly recommended!",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Muhammad Fahad",
+    role: "Verified Google Client",
+    quote: "Extremely professional interior designers in Karachi, best wooden flooring and blinds service.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Asad Ali",
+    role: "Verified Google Client",
+    quote: "5 Star service.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Anas Siddiqui",
+    role: "Verified Google Client",
+    quote: "Best work in progress.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Farhan Saif",
+    role: "Verified Google Client",
+    quote: "Top quality SPC wood flooring.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Shahrukh Khan",
+    role: "Verified Google Client",
+    quote: "Excellent work 👍",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Uzair Shaikh",
+    role: "Verified Google Client",
+    quote: "Excellent work Karachi studio 🌸🌸🌸🌸",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Fawwaz Lodhi",
+    role: "Verified Google Client",
+    quote: "Outstanding interior renovation team in Karachi, always delivering on their promise.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
+  },
+  {
+    name: "Bilal Khan",
+    role: "Verified Google Client",
+    quote: "Best studio that I ever worked with.",
+    rating: 5,
+    source: "Google Business Review",
+    date: "Verified Review • 4 weeks ago",
   },
 ];
 
@@ -93,45 +253,13 @@ export default function Home({ onOpenQuote }) {
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
-  // HERO DIGITS ANIMATED COUNTER HOOK / STATE
+  // HERO DIGITS COUNTER STATE (Initialized with final values to prevent CLS & TBT)
   const [counts, setCounts] = useState({
-    projects: 0,
-    years: 0,
-    awards: 0,
-    satisfaction: 0,
+    projects: 500,
+    years: 7,
+    awards: 12,
+    satisfaction: 100,
   });
-
-  useEffect(() => {
-    const duration = 2000; // 2 seconds animation
-    const steps = 50;
-    const intervalTime = duration / steps;
-    let step = 0;
-
-    const timer = setInterval(() => {
-      step++;
-      const progress = step / steps;
-      const easeProgress = Math.sin((progress * Math.PI) / 2); // Smooth ease-out curve
-
-      setCounts({
-        projects: Math.floor(easeProgress * 500),
-        years: Math.floor(easeProgress * 7),
-        awards: Math.floor(easeProgress * 12),
-        satisfaction: Math.floor(easeProgress * 100),
-      });
-
-      if (step >= steps) {
-        clearInterval(timer);
-        setCounts({
-          projects: 500,
-          years: 7,
-          awards: 12,
-          satisfaction: 100,
-        });
-      }
-    }, intervalTime);
-
-    return () => clearInterval(timer);
-  }, []);
 
   // Vertical line animated height on scroll
   const [lineProgress, setLineProgress] = useState(0);
@@ -197,6 +325,11 @@ export default function Home({ onOpenQuote }) {
             key={heroCategory}
             src={HERO_BACKGROUNDS[heroCategory]}
             alt="Interior Design Studio Pakistan"
+            fetchPriority="high"
+            loading="eager"
+            decoding="sync"
+            width="1920"
+            height="1080"
             className="w-full h-full object-cover scale-105 transition-all duration-700 brightness-90 contrast-105"
           />
           {/* Subtle Dark Vignette & Gradient Overlay */}
@@ -740,23 +873,23 @@ export default function Home({ onOpenQuote }) {
 
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-6 border-t border-gray-700 gap-4">
             <div>
-              <h4 className="font-sans-heading text-lg font-bold text-white">
-                {ENHANCED_REVIEWS[currentReviewIndex].name}
+              <h4 className="font-sans-heading text-lg font-bold text-white flex items-center gap-2">
+                <span>{ENHANCED_REVIEWS[currentReviewIndex].name}</span>
+                <span className="text-[10px] bg-[#4285F4]/20 text-[#4285F4] px-2 py-0.5 rounded-full border border-[#4285F4]/40 font-semibold inline-flex items-center gap-1">
+                  <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  Google Verified
+                </span>
               </h4>
               <p className="text-xs sm:text-sm text-[#C19A5B] font-medium">
-                {ENHANCED_REVIEWS[currentReviewIndex].role}
+                {ENHANCED_REVIEWS[currentReviewIndex].role} • Google Maps Review
               </p>
             </div>
 
-            <a
-              href={ENHANCED_REVIEWS[currentReviewIndex].verifiedLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-1.5 text-xs font-semibold text-white hover:text-[#C19A5B] bg-white/10 px-4 py-2 rounded-xl border border-white/20 transition-colors"
-            >
-              <span>View Verified Site Inquiry</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
+            <div className="flex items-center space-x-2">
+              <span className="text-xs text-gray-400">Review {currentReviewIndex + 1} of {ENHANCED_REVIEWS.length}</span>
+            </div>
           </div>
         </div>
       </section>

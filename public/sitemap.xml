@@ -1,82 +1,279 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Core Main Pages -->
   <url>
     <loc>https://interiordesignstudiopk.com/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://interiordesignstudiopk.com/services</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://interiordesignstudiopk.com/projects</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://interiordesignstudiopk.com/about</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://interiordesignstudiopk.com/contact</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Categories -->
-  <url><loc>https://interiordesignstudiopk.com/category/flooring</loc><priority>0.85</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/category/window-blinds</loc><priority>0.85</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/category/wall-covering</loc><priority>0.85</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/category/furniture</loc><priority>0.85</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/category/kitchen</loc><priority>0.85</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/category/false-ceiling</loc><priority>0.85</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/category/fiber-shades</loc><priority>0.85</priority></url>
+
+  <!-- Category Hub Pages -->
+  <url>
+    <loc>https://interiordesignstudiopk.com/category/flooring</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/category/window-blinds</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/category/wall-covering</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/category/furniture</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/category/kitchen</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/category/false-ceiling</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/category/fiber-shades</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
   <!-- Flooring Products -->
-  <url><loc>https://interiordesignstudiopk.com/products/spc-flooring</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/wooden-flooring</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/vinyl-flooring</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/epoxy-flooring</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/wall-to-wall-carpet</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/center-piece-rugs</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/kids-eva-flooring</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/sports-flooring</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/gym-flooring</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/pvc-coil-mats</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/carpet-tiles</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/artificial-grass</loc><priority>0.8</priority></url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/spc-flooring</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/wooden-flooring</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/vinyl-flooring</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/epoxy-flooring</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/wall-to-wall-carpet</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/center-piece-rugs</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/kids-eva-flooring</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/sports-flooring</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/gym-flooring</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/pvc-coil-mats</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/carpet-tiles</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/artificial-grass</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Window Blinds Products -->
-  <url><loc>https://interiordesignstudiopk.com/products/roller-blinds</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/vertical-blinds</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/wooden-blinds</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/bamboo-chick-blinds</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/zebra-blinds</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/pvc-strip-curtains</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/verman-blinds</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/customise-printed-design-blind</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/curtains</loc><priority>0.8</priority></url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/roller-blinds</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/vertical-blinds</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/wooden-blinds</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/bamboo-chick-blinds</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/zebra-blinds</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/pvc-strip-curtains</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/verman-blinds</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/customise-printed-design-blind</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/curtains</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Wall Covering Products -->
-  <url><loc>https://interiordesignstudiopk.com/products/wallpaper-all-generation</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/customise-design-canvas</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/pvc-panel</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/fluted-panels</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/wall-texture</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/wall-moulding</loc><priority>0.8</priority></url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/wallpaper-all-generation</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/customise-design-canvas</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/pvc-panel</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/fluted-panels</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/wall-texture</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/wall-moulding</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <!-- Furniture & Other Products -->
-  <url><loc>https://interiordesignstudiopk.com/products/commercial-furniture</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/residential-furniture</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/kitchen</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/false-ceiling</loc><priority>0.8</priority></url>
-  <url><loc>https://interiordesignstudiopk.com/products/fiber-shades</loc><priority>0.8</priority></url>
+  <!-- Furniture, Kitchen, Ceiling & Shade Products -->
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/commercial-furniture</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/residential-furniture</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/kitchen</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/false-ceiling</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://interiordesignstudiopk.com/products/fiber-shades</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

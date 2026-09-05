@@ -195,24 +195,53 @@ export default function ProductDetail({ onOpenQuote }) {
     navigate(path);
   };
 
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: solution.categoryName || 'Category', url: `/category/${solution.category || 'flooring'}` },
+    { name: solution.title, url: `/products/${productId}` }
+  ];
+
+  const productFaqs = [
+    {
+      question: `How much does ${solution.title} cost in Karachi?`,
+      answer: `Pricing depends on total square footage, subfloor condition, and material grade. We provide a complete upfront itemized quote with material supply, adhesive/accessories, and on-site expert installation included.`
+    },
+    {
+      question: `Do you provide site survey and sample viewing before booking?`,
+      answer: `Yes, our senior contractor team visits your home or office in Karachi with physical sample swatches and laser distance meters to provide exact measurements and guidance.`
+    },
+    {
+      question: `What warranty is included with ${solution.title}?`,
+      answer: `We provide complete manufacturer material warranties along with guaranteed workmanship and fitting warranty.`
+    }
+  ];
+
   return (
     <div className="font-sans text-[#111111] bg-[#FAFAFA] min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <SEO 
-        title={`${solution.title}`}
-        description={`${solution.subtitle || solution.description}`}
-        keywords={`${solution.title} karachi, ${solution.categoryName} fitting near me, turnkey ${solution.title}`}
+        title={`${solution.title} in Karachi | Supply & Fitting`}
+        description={`${solution.subtitle || solution.description} Turnkey material supply + expert installation in Karachi by Interior Design Studio.`}
+        keywords={`${solution.title} karachi, ${solution.categoryName} contractor karachi, buy ${solution.title} karachi, best flooring contractor near me`}
         ogImage={selectedImage || solution.image}
+        breadcrumbs={breadcrumbs}
+        faqs={productFaqs}
+        productData={{
+          name: solution.title,
+          description: solution.description
+        }}
       />
       <div className="max-w-7xl mx-auto space-y-12">
         
         {/* Breadcrumb Navigation */}
-        <div className="flex items-center space-x-2 text-xs text-gray-500 font-medium">
-          <button onClick={() => handleNavClick('/')} className="hover:text-[#C19A5B]">Home</button>
+        <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs text-gray-500 font-medium">
+          <Link to="/" className="hover:text-[#C19A5B] transition-colors">Home</Link>
           <ChevronRight className="w-3.5 h-3.5 text-[#C19A5B]" />
-          <span className="text-gray-600 font-semibold">{solution.categoryName}</span>
+          <Link to={`/category/${solution.category || 'flooring'}`} className="text-gray-600 hover:text-[#C19A5B] font-semibold transition-colors">
+            {solution.categoryName}
+          </Link>
           <ChevronRight className="w-3.5 h-3.5 text-[#C19A5B]" />
           <span className="text-[#C19A5B] font-bold">{solution.title}</span>
-        </div>
+        </nav>
 
         {/* Main Outclass Solution Viewport & Contractor Booking Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">

@@ -35,6 +35,10 @@ export default function Footer({ onOpenQuote }) {
               <img
                 src="/full logo.png"
                 alt="Interior Design Studio Pakistan"
+                width="220"
+                height="48"
+                loading="lazy"
+                decoding="async"
                 className="h-12 invert sm:h-16 lg:h-20 w-auto object-contain transition-transform group-hover:scale-105"
               />
             </button>

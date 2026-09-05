@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import ProductDetail from './pages/ProductDetail';
-import CategoryPage from './pages/CategoryPage';
-import Services from './pages/Services';
-import Projects from './pages/Projects';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import QuoteModal from './components/QuoteModal';
 import FloatingContact from './components/FloatingContact';
 import ScrollToTop from './components/ScrollToTop';
 import { ChevronUp } from 'lucide-react';
+
+const ProductDetail = lazy(() => import('./pages/ProductDetail'));
+const CategoryPage = lazy(() => import('./pages/CategoryPage'));
+const Services = lazy(() => import('./pages/Services'));
+const Projects = lazy(() => import('./pages/Projects'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const QuoteModal = lazy(() => import('./components/QuoteModal'));
 
 export default function App() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
@@ -41,15 +42,17 @@ export default function App() {
       <Navbar onOpenQuote={() => setIsQuoteOpen(true)} />
 
       <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home onOpenQuote={() => setIsQuoteOpen(true)} />} />
-          <Route path="/products/:productId" element={<ProductDetail onOpenQuote={() => setIsQuoteOpen(true)} />} />
-          <Route path="/category/:categoryId" element={<CategoryPage onOpenQuote={() => setIsQuoteOpen(true)} />} />
-          <Route path="/services" element={<Services onOpenQuote={() => setIsQuoteOpen(true)} />} />
-          <Route path="/projects" element={<Projects onOpenQuote={() => setIsQuoteOpen(true)} />} />
-          <Route path="/about" element={<About onOpenQuote={() => setIsQuoteOpen(true)} />} />
-          <Route path="/contact" element={<Contact onOpenQuote={() => setIsQuoteOpen(true)} />} />
-        </Routes>
+        <Suspense fallback={<div className="min-h-[50vh] flex items-center justify-center"><div className="w-8 h-8 border-3 border-[#C19A5B] border-t-transparent rounded-full animate-spin"></div></div>}>
+          <Routes>
+            <Route path="/" element={<Home onOpenQuote={() => setIsQuoteOpen(true)} />} />
+            <Route path="/products/:productId" element={<ProductDetail onOpenQuote={() => setIsQuoteOpen(true)} />} />
+            <Route path="/category/:categoryId" element={<CategoryPage onOpenQuote={() => setIsQuoteOpen(true)} />} />
+            <Route path="/services" element={<Services onOpenQuote={() => setIsQuoteOpen(true)} />} />
+            <Route path="/projects" element={<Projects onOpenQuote={() => setIsQuoteOpen(true)} />} />
+            <Route path="/about" element={<About onOpenQuote={() => setIsQuoteOpen(true)} />} />
+            <Route path="/contact" element={<Contact onOpenQuote={() => setIsQuoteOpen(true)} />} />
+          </Routes>
+        </Suspense>
       </main>
 
       <Footer onOpenQuote={() => setIsQuoteOpen(true)} />
@@ -68,8 +71,12 @@ export default function App() {
         </button>
       )}
 
-      {/* Site Survey Inquiry Modal */}
-      <QuoteModal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
+      {/* Site Survey Inquiry Modal (Lazy Loaded only when opened) */}
+      {isQuoteOpen && (
+        <Suspense fallback={null}>
+          <QuoteModal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
+        </Suspense>
+      )}
     </div>
   );
 }
